@@ -1,19 +1,19 @@
-#include "functions.h"
+#include "header.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+#include <sstream>
 
 using namespace std;
 
 void Login(string cat) {
-    string loginName, loginPassword, inName, inPassword;
+    string loginName, loginPassword, inName, inPassword, row;
     string fileName = cat.append("s.txt");
     cin.ignore();
-    fstream g;
+    ifstream f(fileName);
 
-    g.open(fileName, ios::out);
-
-    if (!g.is_open()) {
+    if (!f.is_open()) {
         cout << "could not open file\n";
     }
     
@@ -21,11 +21,14 @@ void Login(string cat) {
     cout << "\n\t\t\t\t" << cat << " Login";
     line(100, '-');
 
-    getline(g, loginName, '.');
-    getline(g, loginPassword, '.');
+    getline(f, row, '\n');
+    stringstream(row);
+    getline(row, loginName, '.');
+    getline(f, loginPassword, '.');
 
+    cout << loginName << " : " << loginPassword;
 
-    while (1)
+    while (3)
     {
         cout << "\n" << "Enter Username: ";
         getline(cin, inName);
@@ -40,11 +43,13 @@ void Login(string cat) {
         cout << "Incorrect name or password\n";
     }
 
+    cout << "Ran out of attempts.";
+
     if (cat == "donor") {
         
     } else if (cat == "recipient") {
         
     }
 
-    g.close();
+    f.close();
 }
