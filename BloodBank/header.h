@@ -6,7 +6,7 @@ void donorScreen();
 void Login(string);
 void Register(string);
 
-struct currentDonor {
+struct donorList {
 	string username;
 	string password;
 	string fname;

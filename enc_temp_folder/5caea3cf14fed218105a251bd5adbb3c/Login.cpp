@@ -11,7 +11,6 @@ using namespace std;
 void Login(string cat) {
     donorList donor[10];
     string loginName, loginPassword, inName, inPassword, record, col, test;
-    bool loginStatus
     string fileName = (cat + "s.txt");
     vector<vector<string>> v1;
     vector<string> v2;
@@ -50,25 +49,6 @@ void Login(string cat) {
     cat[0] = toupper(cat[0]);
     cout << "\n\t\t\t\t" << cat << " Login";
     line(100, '-');
-    int maxAttempts = 0;
-    do
-    {
-        cout << "\n" << "Enter Username: ";
-        getline(cin, inName);
-        cout << "Enter Password: ";
-        getline(cin, inPassword);
-
-        for (int i = 0; i < v1.size(); i++)
-        {
-            if (inName == donor[i].username && inPassword == donor[i].password)
-            {
-                cout << "Login Successful\n" << "Welcome, " << donor[i].username;
-                break;
-            }
-            cout << "Incorrect name or password\n";
-        }
-        maxAttempts++;
-    } while (maxAttempts <= 3);
 
     while (3)
     {
@@ -81,8 +61,6 @@ void Login(string cat) {
         {
             if (inName == donor[i].username && inPassword == donor[i].password)
             {
-                bool loginStatus = true;
-                int loggedInUser = i;
                 cout << "Login Successful\n" << "Welcome, " << donor[i].username;
                 break;
             }
