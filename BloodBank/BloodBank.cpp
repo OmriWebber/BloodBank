@@ -24,7 +24,7 @@ int main()
 
 	line(100, '-');
 
-	cout << "Enter your option: ";
+	cout << "\nEnter your option: ";
 	cin >> option;
 
 	switch (option)
@@ -33,10 +33,11 @@ int main()
 		line(100, '-');
 		cout << "\n 1. Donor Login";
 		cout << "\n 2. Recipient Login";
+		cout << "\n 3. Admin Login";
 		cout << "\n";
 		line(100, '-');
 
-		cout << "Enter your option: ";
+		cout << "\nEnter your option: ";
 		cin >> option;
 		switch (option)
 		{
@@ -45,6 +46,9 @@ int main()
 			break;
 		case '2':
 			Login("recipient");
+			break;
+		case '3':
+			Login("admin");
 			break;
 		default:
 			break;
@@ -57,7 +61,7 @@ int main()
 		cout << "\n";
 		line(100, '-');
 
-		cout << "Enter your option: ";
+		cout << "\nEnter your option: ";
 		cin >> option;
 		switch (option)
 		{
@@ -76,13 +80,4 @@ int main()
 	}
 
 
-}
-
-void line(int n, char s) {
-	cout << "\n";
-	for (int i = 0; i < n; i++)
-	{
-		cout << s;
-	}
-	cout << "\n";
 }

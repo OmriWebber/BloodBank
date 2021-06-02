@@ -3,6 +3,6 @@
 
 using namespace std;
 
-void displayHowTo() {
-	cout << "How to donate blood.";
+void donorScreen() {
+	cout << "Donor Screen";
 }

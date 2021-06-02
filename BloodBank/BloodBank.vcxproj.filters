@@ -18,16 +18,16 @@
     <ClCompile Include="BloodBank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="displayHowTo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="displayWhy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Register.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="donorScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="line.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -140,8 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BloodBank.cpp" />
-    <ClCompile Include="displayHowTo.cpp" />
-    <ClCompile Include="displayWhy.cpp" />
+    <ClCompile Include="donorScreen.cpp" />
+    <ClCompile Include="line.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Register.cpp" />
   </ItemGroup>
