@@ -1,12 +1,88 @@
-// BloodBank.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// BloodBank.cpp
 
+#include "functions.h"
 #include <iostream>
 
 using namespace std;
 
+void line(int, char);
+
 int main()
 {
-    cout << "Hello World!\n";
-    cout << "TEST";
+	char option;
+
+	cout << "\n\t\t\t\t\tNZ Blood Bank";
+	line(100, '-');
+
+	cout << "\nInformation about blood bank\n";
+	cout << "\nContact Details\n";
+
+	line(100, '-');
+	cout << "\n 1. Login";
+	cout << "\n 2. Register";
+	cout << "\n";
+
+	line(100, '-');
+
+	cout << "Enter your option: ";
+	cin >> option;
+
+	switch (option)
+	{
+	case '1':
+		line(100, '-');
+		cout << "\n 1. Donor Login";
+		cout << "\n 2. Recipient Login";
+		cout << "\n";
+		line(100, '-');
+
+		cout << "Enter your option: ";
+		cin >> option;
+		switch (option)
+		{
+		case '1':
+			Login("donor");
+			break;
+		case '2':
+			Login("recipient");
+			break;
+		default:
+			break;
+		}
+		break;
+	case '2':
+		line(100, '-');
+		cout << "\n 1. Register as a Donor";
+		cout << "\n 2. Register as a Recipient";
+		cout << "\n";
+		line(100, '-');
+
+		cout << "Enter your option: ";
+		cin >> option;
+		switch (option)
+		{
+		case '1':
+			Register("donor");
+			break;
+		case '2':
+			Register("recipient");
+			break;
+		default:
+			break;
+		}
+		break;
+	default:
+		break;
+	}
+
+
+}
+
+void line(int n, char s) {
+	cout << "\n";
+	for (int i = 0; i < n; i++)
+	{
+		cout << s;
+	}
+	cout << "\n";
 }
