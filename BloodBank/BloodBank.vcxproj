@@ -140,6 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BloodBank.cpp" />
+    <ClCompile Include="displayHowTo.cpp" />
+    <ClCompile Include="displayWhy.cpp" />
+    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="Register.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
