@@ -14,6 +14,8 @@ int main(Data data)
 	
 
 	cout << "test12345";
+	cout << "test12345";
+
 	cout << "\n\t\t\t\t\tNZ Blood Bank";
 	line(100, '-');
 
