@@ -52,7 +52,7 @@ void Register(string cat) {
         cout << "Password: ";
         getline(cin, registerPassword);
 
-        g << registerName << ", " << registerPassword << ", " << fname << ", " << lname << ", " << dob << ", " << nationality << ", " << ethnicity << ", " << gender << ", " << existingConditions << ", " << bloodType << ", " << contactNumber << ", " << email << ", " << address << ", " << lastDonation << "|";
+        g << registerName << "," << registerPassword << "," << fname << "," << lname << "," << dob << "," << nationality << "," << ethnicity << "," << gender << "," << existingConditions << "," << bloodType << "," << contactNumber << "," << email << "," << address << "," << lastDonation << "|";
 
     } else if (cat == "recipient") {
         string recipientName, address, email, contactNumber;
@@ -71,7 +71,7 @@ void Register(string cat) {
         cout << "Password: ";
         getline(cin, registerPassword);
 
-        g << registerName << ", " << registerPassword << ", " << recipientName << ", " << address << ", " << email << ", " << contactNumber << "|";
+        g << registerName << "," << registerPassword << "," << recipientName << "," << address << "," << email << "," << contactNumber << "|";
 
     }
 

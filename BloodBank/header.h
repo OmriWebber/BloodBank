@@ -7,6 +7,7 @@ void Login(string);
 void Register(string);
 
 struct donorList {
+	int id;
 	string username;
 	string password;
 	string fname;

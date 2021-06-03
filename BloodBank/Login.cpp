@@ -8,14 +8,18 @@
 
 using namespace std;
 
+void loadData();
+
 void Login(string cat) {
     donorList donor[10];
-    string loginName, loginPassword, inName, inPassword, record, col, test;
-    bool loginStatus
+    string inName, inPassword, record, col;
+    int currentUser;
+    bool loginStatus = false;
+    
+    cin.ignore();
     string fileName = (cat + "s.txt");
     vector<vector<string>> v1;
     vector<string> v2;
-    cin.ignore();
     ifstream f(fileName);
 
     if (!f.is_open()) {
@@ -58,40 +62,26 @@ void Login(string cat) {
         cout << "Enter Password: ";
         getline(cin, inPassword);
 
-        for (int i = 0; i < v1.size(); i++)
+        if (!loginStatus)
         {
-            if (inName == donor[i].username && inPassword == donor[i].password)
+            for (int i = 0; i < v1.size(); i++)
             {
-                cout << "Login Successful\n" << "Welcome, " << donor[i].username;
-                break;
+                if (inName == donor[i].username && inPassword == donor[i].password)
+                {
+                    loginStatus = true;
+                    donor[i].id = i;
+                    cout << "\n\nLogin Successful\n" << "Welcome, " << donor[i].username;
+                    goto success;
+                }
             }
-            cout << "Incorrect name or password\n";
         }
+        cout << "Incorrect name or password\n";
         maxAttempts++;
-    } while (maxAttempts <= 3);
-
-    while (3)
-    {
-        cout << "\n" << "Enter Username: ";
-        getline(cin, inName);
-        cout << "Enter Password: ";
-        getline(cin, inPassword);
-
-        for (int i = 0; i < v1.size(); i++)
-        {
-            if (inName == donor[i].username && inPassword == donor[i].password)
-            {
-                bool loginStatus = true;
-                int loggedInUser = i;
-                cout << "Login Successful\n" << "Welcome, " << donor[i].username;
-                break;
-            }
-            cout << "Incorrect name or password\n";
-        }
-    }
+    } while (maxAttempts <= 3 || loginStatus == true);
 
     cout << "Ran out of attempts.";
 
+success:;
     if (cat == "donor") {
         
     } else if (cat == "recipient") {
