@@ -8,7 +8,7 @@ using namespace std;
 void line(int, char);
 Data data;
 
-data = new Data();
+
 
 int main(Data data)
 {
