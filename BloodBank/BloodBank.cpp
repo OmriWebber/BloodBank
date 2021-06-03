@@ -11,12 +11,7 @@ Data data;
 int main(Data data)
 {
 	char option;
-	
 
-	cout << "test12345";
-	cout << "test12345";
-
-	cout << "test123";
 	cout << "\n\t\t\t\t\tNZ Blood Bank";
 	line(100, '-');
 
@@ -48,7 +43,7 @@ int main(Data data)
 		switch (option)
 		{
 		case '1':
-			Login(Data data, "donor");
+			Login(data, "donor");
 			break;
 		case '2':
 			Login(data, "recipient");
