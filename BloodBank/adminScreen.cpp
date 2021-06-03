@@ -3,6 +3,6 @@
 
 using namespace std;
 
-void adminScreen(int currentUser) {
+void adminScreen(Data data, int currentUser) {
 	cout << "Admin Screen";
 }

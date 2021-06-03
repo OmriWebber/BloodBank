@@ -20,7 +20,7 @@ void Register(string cat) {
     }
     if (cat == "donor")
     {
-        string fname, lname, dob, nationality, ethnicity, gender, existingConditions, bloodType, contactNumber, email, address, lastDonation = " ";
+        string fname, lname, dob, nationality, ethnicity, gender, existingConditions, bloodType, contactNumber, email, address, city, lastDonation = " ";
         cout << "\n\t\t\t\tDonor Registration";
         line(100, '-');
         cout << "\n" << "First Name: ";
@@ -45,6 +45,8 @@ void Register(string cat) {
         getline(cin, email);
         cout << "Physical Address: ";
         getline(cin, address);
+        cout << "City: ";
+        getline(cin, city);
         cout << "Date of last donation (dd/mm/yyyy)(optional): ";
         getline(cin, lastDonation);
         cout << "\n" << "Username: ";
@@ -52,7 +54,7 @@ void Register(string cat) {
         cout << "Password: ";
         getline(cin, registerPassword);
 
-        g << registerName << "," << registerPassword << "," << fname << "," << lname << "," << dob << "," << nationality << "," << ethnicity << "," << gender << "," << existingConditions << "," << bloodType << "," << contactNumber << "," << email << "," << address << "," << lastDonation << "|";
+        g << registerName << "," << registerPassword << "," << fname << "," << lname << "," << dob << "," << nationality << "," << ethnicity << "," << gender << "," << existingConditions << "," << bloodType << "," << contactNumber << "," << email << "," << address << "," << city << "," << lastDonation << "|";
 
     } else if (cat == "recipient") {
         string recipientName, address, email, contactNumber;

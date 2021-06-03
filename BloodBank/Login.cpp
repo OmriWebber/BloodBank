@@ -49,7 +49,8 @@ void Login(Data data, string cat) {
             data.donor[i].contactNumber = v1[i][10];
             data.donor[i].email = v1[i][11];
             data.donor[i].address = v1[i][12];
-            data.donor[i].lastDonation = v1[i][13];
+            data.donor[i].city = v1[i][13];
+            data.donor[i].lastDonation = v1[i][14];
         }
     }
     else if (cat == "recipient")
@@ -139,14 +140,14 @@ void Login(Data data, string cat) {
 
     cout << "\n\nYou have ran out of login attempts.\n\nGoing back to main menu . . .\n\n";
     system("PAUSE");
-    main();
+    main(data);
 
 success:;
     if (cat == "donor") {
-        donorScreen(currentUser);
+        donorScreen(data, currentUser);
     } else if (cat == "recipient") {
-        recipientScreen(currentUser);
+        recipientScreen(data, currentUser);
     } else if (cat == "admin") {
-        adminScreen(currentUser);
+        adminScreen(data, currentUser);
     }
 }

@@ -3,6 +3,6 @@
 
 using namespace std;
 
-void recipientScreen(int currentUser) {
+void recipientScreen(Data data, int currentUser) {
 	cout << "Recipient Screen";
 }

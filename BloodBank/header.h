@@ -16,8 +16,29 @@ struct donorList {
 	string contactNumber;
 	string email;
 	string address;
-	string lastDonation = " ";
+	string city;
+	string lastDonation = "N/A";
 	bool approved = false;
+
+	donorList() {
+		currentUser = 0;
+		username = "username";
+		password = "password";
+		fname = "fname";
+		lname = "lname";
+		dob = "dob";
+		nationality = "nationality";
+		ethnicity = "ehtnicity";
+		gender = "gender";
+		existingConditions = "existingConditions";
+		bloodType = "bloodType";
+		contactNumber = "contact Number";
+		email = "email";
+		address = "address";
+		city = "city";
+		lastDonation = "N/A";
+		approved = false;
+	}
 };
 
 struct recipientList {
@@ -29,6 +50,17 @@ struct recipientList {
 	string email;
 	string contactNumber; 
 	bool approved = false;
+
+	recipientList() {
+		currentUser = 0;
+		username = "username";
+		password = "password";
+		name = "name";
+		address = "address";
+		email = "email";
+		contactNumber = "contactNumber";
+		approved = false;
+	}
 };
 
 struct adminList {
@@ -49,10 +81,10 @@ struct Data {
 	adminList admin[5];
 };
 
-int main();
+int main(Data);
 void line(int, char);
-void donorScreen(int);
-void recipientScreen(int);
-void adminScreen(int);
+void donorScreen(Data, int);
+void recipientScreen(Data, int);
+void adminScreen(Data, int);
 void Login(struct Data, string);
 void Register(string);

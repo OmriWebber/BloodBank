@@ -3,6 +3,7 @@
 
 using namespace std;
 
-void donorScreen(int currentUser) {
-	cout << "Donor Screen";
+void donorScreen(Data data, int currentUser) {
+	cout << "\n\t\t\t\t\tDonor Screen";
+	line(100, '-');
 }
