@@ -146,6 +146,7 @@
     <ClCompile Include="recipientScreen.cpp" />
     <ClCompile Include="Register.cpp" />
     <ClCompile Include="adminScreen.cpp" />
+    <ClCompile Include="readData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />

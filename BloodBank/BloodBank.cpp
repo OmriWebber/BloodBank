@@ -6,7 +6,6 @@
 using namespace std;
 
 void line(int, char);
-Data data;
 
 int main(Data data)
 {
@@ -43,13 +42,13 @@ int main(Data data)
 		switch (option)
 		{
 		case '1':
-			Login(data, "donor");
+			Login(readData(), "donor");
 			break;
 		case '2':
-			Login(data, "recipient");
+			Login(readData(), "recipient");
 			break;
 		case '3':
-			Login(data, "admin");
+			Login(readData(), "admin");
 			break;
 		default:
 			break;
