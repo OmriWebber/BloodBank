@@ -87,7 +87,6 @@ void Login(Data data, string cat) {
         cout << "Enter Password: ";
         getline(cin, inPassword);
 
-        // cout << inName << " " << inPassword << " " << donor[0].username << " " << donor[0].password << " " << loginStatus;
         if (cat == "Donor") {
             if (!loginStatus)
             {
