@@ -46,7 +46,7 @@ int main(Data data)
 		switch (option)
 		{
 		case '1':
-			Login(Data data, "donor");
+			Login(data, "donor");
 			break;
 		case '2':
 			Login(data, "recipient");
