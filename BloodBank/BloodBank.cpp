@@ -11,12 +11,11 @@ Data data;
 int main(Data data)
 {
 	char option;
-	
 
-	cout << "\n\t\t\t\t\tNZ Blood Bank";
+	cout << "\n\t\t\t\t\tOneBlood";
 	line(100, '-');
 
-	cout << "\nInformation about blood bank\n";
+	cout << "\nInformation about OneBlood\n";
 	cout << "\nContact Details\n";
 
 	line(100, '-');

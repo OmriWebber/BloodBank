@@ -86,5 +86,5 @@ void line(int, char);
 void donorScreen(Data, int);
 void recipientScreen(Data, int);
 void adminScreen(Data, int);
-void Login(struct Data, string);
+void Login(Data, string);
 void Register(string);
