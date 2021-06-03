@@ -3,6 +3,6 @@
 
 using namespace std;
 
-void donorScreen() {
+void donorScreen(int currentUser) {
 	cout << "Donor Screen";
 }

@@ -10,6 +10,7 @@ void line(int, char);
 int main()
 {
 	char option;
+	Data data;
 
 	cout << "\n\t\t\t\t\tNZ Blood Bank";
 	line(100, '-');
@@ -42,13 +43,13 @@ int main()
 		switch (option)
 		{
 		case '1':
-			Login("donor");
+			Login(data, "donor");
 			break;
 		case '2':
-			Login("recipient");
+			Login(data, "recipient");
 			break;
 		case '3':
-			Login("admin");
+			Login(data, "admin");
 			break;
 		default:
 			break;
