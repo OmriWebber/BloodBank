@@ -3,11 +3,13 @@ using namespace std;
 
 void line(int, char);
 void donorScreen();
+void recipientScreen();
+void adminScreen();
 void Login(string);
 void Register(string);
 
 struct donorList {
-	int id;
+	int currentUser;
 	string username;
 	string password;
 	string fname;
@@ -22,4 +24,20 @@ struct donorList {
 	string email;
 	string address;
 	string lastDonation = " ";
+};
+
+struct recipientList {
+	int currentUser;
+	string username;
+	string password;
+	string name;
+	string address;
+	string email;
+	string contactNumber;
+};
+
+struct adminList {
+	int currentUser;
+	string username;
+	string password;
 };
