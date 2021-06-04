@@ -1,45 +1,24 @@
 #include <string>
 using namespace std;
 
-class donorList {
-	public: 
-		int currentUser;
-		string username;
-		string password;
-		string fname;
-		string lname;
-		string dob;
-		string nationality;
-		string ethnicity;
-		string gender;
-		string existingConditions;
-		string bloodType;
-		string contactNumber;
-		string email;
-		string address;
-		string city;
-		string lastDonation = "N/A";
-		bool approved = false;
-
-	/*donorList() {
-		currentUser = 0;
-		username = "username";
-		password = "password";
-		fname = "fname";
-		lname = "lname";
-		dob = "dob";
-		nationality = "nationality";
-		ethnicity = "ehtnicity";
-		gender = "gender";
-		existingConditions = "existingConditions";
-		bloodType = "bloodType";
-		contactNumber = "contact Number";
-		email = "email";
-		address = "address";
-		city = "city";
-		lastDonation = "N/A";
-		approved = false;
-	}*/
+struct donorList {
+	int currentUser;
+	string username;
+	string password;
+	string fname;
+	string lname;
+	string dob;
+	string nationality;
+	string ethnicity;
+	string gender;
+	string existingConditions;
+	string bloodType;
+	string contactNumber;
+	string email;
+	string address;
+	string city;
+	string lastDonation = "N/A";
+	bool approved = false;
 };
 
 struct recipientList {
@@ -51,29 +30,12 @@ struct recipientList {
 	string email;
 	string contactNumber; 
 	bool approved = false;
-
-	recipientList() {
-		currentUser = 0;
-		username = "username";
-		password = "password";
-		name = "name";
-		address = "address";
-		email = "email";
-		contactNumber = "contactNumber";
-		approved = false;
-	}
 };
 
 struct adminList {
 	int currentUser;
 	string username;
 	string password;
-
-	adminList() {
-		currentUser = 0;
-		username = "username";
-		password = "password";
-	}
 };
 
 struct Data {
@@ -82,9 +44,9 @@ struct Data {
 	adminList admin[5];
 };
 
-int main(Data);
+int main();
 void line(int, char);
-struct Data readData();
+struct Data readData(Data);
 void donorData(Data, string);
 void recipientData(Data, string);
 void adminData(Data, string);
