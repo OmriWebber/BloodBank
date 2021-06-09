@@ -6,12 +6,13 @@
 using namespace std;
 
 void Register(string cat) {
+    Data data;
     string registerName, registerPassword;
     string fileName = cat + "s.txt";
     cin.ignore();
     fstream g;
 
-    g.open(fileName, ios::in | ios::app);
+    g.open(fileName, ios::in | ios::app | ios::binary);
             
     if (!g.is_open())
     
@@ -20,60 +21,60 @@ void Register(string cat) {
     }
     if (cat == "donor")
     {
-        string fname, lname, dob, nationality, ethnicity, gender, existingConditions, bloodType, contactNumber, email, address, city, lastDonation = " ";
         cout << "\n\t\t\t\tDonor Registration";
         line(100, '-');
         cout << "\n" << "First Name: ";
-        getline(cin, fname);
+        cin.getline(data.donor->fname, 40);
         cout << "Last Name: ";
-        getline(cin, lname);
+        cin.getline(data.donor->lname, 40);
         cout << "Date of Birth (dd/mm/yyyy): ";
-        getline(cin, dob);
+        cin.getline(data.donor->dob, 40);
         cout << "Nationality: ";
-        getline(cin, nationality);
+        cin.getline(data.donor->nationality, 40);
         cout << "Ethnicity: ";
-        getline(cin, ethnicity);
+        cin.getline(data.donor->ethnicity, 40);
         cout << "Gender: ";
-        getline(cin, gender);
+        cin.getline(data.donor->gender, 40);
         cout << "Pre-Existing Conditions: ";
-        getline(cin, existingConditions);
+        cin.getline(data.donor->existingConditions, 40);
         cout << "Blood Type: ";
-        getline(cin, bloodType);
+        cin.getline(data.donor->bloodType, 40);
         cout << "Contact Number: ";
-        getline(cin, contactNumber);
+        cin.getline(data.donor->contactNumber, 40);
         cout << "Email Address: ";
-        getline(cin, email);
+        cin.getline(data.donor->email, 40);
         cout << "Physical Address: ";
-        getline(cin, address);
+        cin.getline(data.donor->address, 40);
         cout << "City: ";
-        getline(cin, city);
+        cin.getline(data.donor->city, 40);
         cout << "Date of last donation (dd/mm/yyyy)(optional): ";
-        getline(cin, (lastDonation));
+        cin.getline(data.donor->lastDonation, 15);
         cout << "\n" << "Username: ";
-        getline(cin, registerName);
+        cin.getline(data.donor->username, 50);
         cout << "Password: ";
-        getline(cin, registerPassword);
+        cin.getline(data.donor->password, 40);
 
-        g << registerName << "," << registerPassword << "," << fname << "," << lname << "," << dob << "," << nationality << "," << ethnicity << "," << gender << "," << existingConditions << "," << bloodType << "," << contactNumber << "," << email << "," << address << "," << city << "," << lastDonation << " |";
+
+        g.write(reinterpret_cast<char*>(&data.donor), sizeof(data.donor));
 
     } else if (cat == "recipient") {
         string recipientName, address, email, contactNumber;
         cout << "\n\t\t\t\tRecipient Registration";
         line(100, '-');
         cout << "\n" << "Recipient Name: ";
-        getline(cin, recipientName);
+        cin.getline(data.recipient->name, 40);
         cout << "Physical Address: ";
-        getline(cin, address);
+        cin.getline(data.recipient->address, 60);
         cout << "Email: ";
-        getline(cin, email);
+        cin.getline(data.recipient->email, 40);
         cout << "Contact Number: ";
-        getline(cin, contactNumber);
+        cin.getline(data.recipient->contactNumber, 40);
         cout << "\n" << "Username: ";
-        getline(cin, registerName);
+        cin.getline(data.recipient->username, 40);
         cout << "Password: ";
-        getline(cin, registerPassword);
+        cin.getline(data.recipient->password, 40);
 
-        g << registerName << "," << registerPassword << "," << recipientName << "," << address << "," << email << "," << contactNumber << "|";
+        g.write(reinterpret_cast<char*>(&data.recipient), sizeof(data.recipient));
 
     }
 

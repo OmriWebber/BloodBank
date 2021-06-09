@@ -29,9 +29,6 @@ void Login(Data data, string cat) {
         getline(cin, inPassword);
 
         if (cat == "Donor") {
-
-            cout << inName << " " << inPassword << " : " << data.donor[1].username << " " << data.donor[1].password;
-
             int size = sizeof(data.donor) / sizeof(data.donor[0]);
             if (!loginStatus)
             {

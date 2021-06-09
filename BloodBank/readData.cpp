@@ -9,126 +9,87 @@
 
 using namespace std;
 
-
-void donorData(Data data, string fileName) {
-    string record, col;
-    int t = 0;
-    vector<vector<string>> v1;
-    vector<string> v2;
-
-    ifstream f(fileName);
-    if (!f.is_open()) {
-        cout << "Could not open file " << fileName << "\n";
-    }
-    
-    while (getline(f, record, '|')) {
-        stringstream s(record);
-        while (getline(s, col, ',')) {
-            v2.push_back(col);
-            
-        }
-        v1.push_back(v2);
-        t++;
-    }
-    cout << t;
-    int donorSize = v1.size();
-
-    for (int i = 0; i < donorSize; i++)
-    {
-        data.donor[i].username = v1[i][0];
-        data.donor[i].password = v1[i][1];
-        data.donor[i].fname = v1[i][2];
-        data.donor[i].lname = v1[i][3];
-        data.donor[i].dob = v1[i][4];
-        data.donor[i].nationality = v1[i][5];
-        data.donor[i].ethnicity = v1[i][6];
-        data.donor[i].gender = v1[i][7];
-        data.donor[i].existingConditions = v1[i][8];
-        data.donor[i].bloodType = v1[i][9];
-        data.donor[i].contactNumber = v1[i][10];
-        data.donor[i].email = v1[i][11];
-        data.donor[i].address = v1[i][12];
-        data.donor[i].city = v1[i][13];
-        data.donor[i].lastDonation = v1[i][14];
-        
-    }
-    f.close();
-
-    for (int i = 0; i < donorSize; i++)
-    {
-        cout << data.donor[i].username << " : " << data.donor[i].password << " " << i << "\n" << v1[i][0] << "\n";
-    }
-}
-
-void recipientData(Data data, string fileName) {
-    string record, col;
-    vector<vector<string>> v1;
-    vector<string> v2;
-    ifstream f(fileName);
-    if (!f.is_open()) {
-        cout << "Could not open file " << fileName << "\n";
-    }
-
-    while (getline(f, record, '|')) {
-        stringstream s(record);
-        while (getline(s, col, ',')) {
-            v2.push_back(col);
-        }
-        v1.push_back(v2);
-    }
-    int recipientSize = v1.size();
-
-    for (int i = 0; i < recipientSize; i++)
-    {
-        data.recipient[i].username = v1[i][0];
-        data.recipient[i].password = v1[i][1];
-        data.recipient[i].name = v1[i][2];
-        data.recipient[i].address = v1[i][3];
-        data.recipient[i].email = v1[i][4];
-        data.recipient[i].contactNumber = v1[i][5];
-    } 
-    f.close();
-}
-
-void adminData(Data data, string fileName) {
-    string record, col;
-    vector<vector<string>> v1;
-    vector<string> v2;
-    ifstream f(fileName);
-    if (!f.is_open()) {
-        cout << "Could not open file " << fileName << "\n";
-    }
-
-    while (getline(f, record, '|')) {
-        stringstream s(record);
-        while (getline(s, col, ',')) {
-            v2.push_back(col);
-        }
-        v1.push_back(v2);
-    }
-    
-    int adminSize = v1.size();
-
-    for (int i = 0; i < adminSize; i++)
-    {
-        data.admin[i].username = v1[i][0];
-        data.admin[i].password = v1[i][1];
-    }
-    f.close();
-}
-
-struct Data readData(Data data) {
+struct Data readData() {
     string donorFile = ("donors.txt");
     string recipientFile = ("recipients.txt");
     string adminFile = ("admins.txt");
 
-    donorData(data, donorFile);
-    recipientData(data, recipientFile);
-    adminData(data, adminFile);
+    donorData(donorFile);
+    recipientData(recipientFile);
+    adminData(adminFile);
+}
 
-    for (int i = 0; i < 4; i++)
-    {
-        cout << data.donor[i].username << " : " << data.donor[i].password;
+void donorData(string fileName) {
+    Data data;
+    ifstream f;
+    int count = 0;
+    f.open(fileName, ios::in | ios::binary);
+
+    if (!f.is_open()) {
+        cout << "Could not open file " << fileName << "\n";
+
+        if (f.is_open())
+        {
+            while (f.read(reinterpret_cast<char*>(&data.donor), sizeof(data.donor)))
+            {
+                cout << count << "\n";
+                cout << "\nFirst Name: " << data.donor->fname;
+                cout << "\nLast Name: " << data.donor->lname;
+                cout << "\nDOB: " << data.donor->dob;
+                cout << "\nNationality: " << data.donor->nationality;
+                cout << "\nEthnicity: " << data.donor->ethnicity;
+                cout << "\nGender: " << data.donor->gender;
+                cout << "\nExisting Conditions: " << data.donor->existingConditions;
+                cout << "\nBlood Type: " << data.donor->bloodType;
+                cout << "\nContact Number: " << data.donor->contactNumber;
+                cout << "\nEmail: " << data.donor->email;
+                cout << "\nAddress: " << data.donor->address;
+                cout << "\nCity: " << data.donor->city;
+                cout << "\nLast Donation: " << data.donor->lastDonation;
+                cout << "\nUsername: " << data.donor->password;
+                cout << "\nPassword: " << data.donor->username;
+                cout << "\nStatus: " << data.donor->approved;
+
+                count++;
+            }
+        }
+        else {
+            cout << "\nFile unable to access ....";
+        }
     }
-    return data;
+    f.close();
+}
+
+void recipientData(string fileName) {
+    Data data;
+    ifstream f;
+    int count = 0;
+    f.open(fileName, ios::in | ios::binary);
+
+    
+
+    if (f.is_open())
+    {
+        cout << "test123";
+        while (f.read(reinterpret_cast<char*>(&data.recipient), sizeof(data.recipient)))
+        {
+            cout << count << "\n";
+            cout << "\nFirst Name: " << data.recipient->name;
+            cout << "\nLast Name: " << data.recipient->address;
+            cout << "\nDOB: " << data.recipient->email;
+            cout << "\nNationality: " << data.recipient->contactNumber;
+            cout << "\nUsername: " << data.recipient->username;
+            cout << "\nPassword: " << data.recipient->password;
+            cout << "\nStatus: " << data.recipient->approved;
+            count++;
+        }
+    }
+    else {
+        cout << "\nFile unable to access ....";
+    }
+    f.close();
+}
+
+void adminData(string fileName) {
+
 }

@@ -24,12 +24,12 @@ class donorList {
 
 struct recipientList {
 	int currentUser;
-	char username;
-	char password;
-	char name;
-	char address;
-	char email; 
-	char contactNumber; 
+	char username[40];
+	char password[40];
+	char name[40];
+	char address[40];
+	char email[40]; 
+	char contactNumber[15]; 
 	bool approved = false;
 
 };
@@ -48,10 +48,10 @@ struct Data {
 
 int main();
 void line(int, char);
-struct Data readData(Data);
-void donorData(Data, string);
-void recipientData(Data, string);
-void adminData(Data, string);
+struct Data readData();
+void donorData(string);
+void recipientData(string);
+void adminData(string);
 void donorScreen(Data, int);
 void recipientScreen(Data, int);
 void adminScreen(Data, int);

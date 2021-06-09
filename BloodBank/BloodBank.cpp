@@ -5,15 +5,10 @@
 
 using namespace std;
 
-
-
-void line(int, char);
-
 int main()
 {
 	char option;
-	Data data;
-	readData(data);
+
 	cout << "\n\t\t\t\t\tOneBlood";
 	line(100, '-');
 
@@ -46,13 +41,13 @@ int main()
 		switch (option)
 		{
 		case '1':
-			Login(data, "donor");
+			Login(readData(), "donor");
 			break;
 		case '2':
-			Login(data, "recipient");
+			Login(readData(), "recipient");
 			break;
 		case '3':
-			Login(data, "admin");
+			Login(readData(), "admin");
 			break;
 		default:
 			cout << "Please enter a vlid value";
