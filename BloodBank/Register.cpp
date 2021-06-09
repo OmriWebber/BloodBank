@@ -48,13 +48,13 @@ void Register(string cat) {
         cout << "City: ";
         getline(cin, city);
         cout << "Date of last donation (dd/mm/yyyy)(optional): ";
-        getline(cin, lastDonation);
+        getline(cin, (lastDonation));
         cout << "\n" << "Username: ";
         getline(cin, registerName);
         cout << "Password: ";
         getline(cin, registerPassword);
 
-        g << registerName << "," << registerPassword << "," << fname << "," << lname << "," << dob << "," << nationality << "," << ethnicity << "," << gender << "," << existingConditions << "," << bloodType << "," << contactNumber << "," << email << "," << address << "," << city << "," << lastDonation << "|";
+        g << registerName << "," << registerPassword << "," << fname << "," << lname << "," << dob << "," << nationality << "," << ethnicity << "," << gender << "," << existingConditions << "," << bloodType << "," << contactNumber << "," << email << "," << address << "," << city << "," << lastDonation << " |";
 
     } else if (cat == "recipient") {
         string recipientName, address, email, contactNumber;

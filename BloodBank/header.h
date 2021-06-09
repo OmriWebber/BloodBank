@@ -38,12 +38,6 @@ struct adminList {
 	int currentUser;
 	string username;
 	string password;
-
-	adminList() {
-		currentUser = 0;
-		username = "username";
-		password = "password";
-	}
 };
 
 struct Data {
@@ -52,9 +46,9 @@ struct Data {
 	adminList admin[5];
 };
 
-int main(Data);
+int main();
 void line(int, char);
-struct Data readData();
+struct Data readData(Data);
 void donorData(Data, string);
 void recipientData(Data, string);
 void adminData(Data, string);

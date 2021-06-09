@@ -36,6 +36,7 @@ void donorData(Data data, string fileName) {
     for (int i = 0; i < donorSize; i++)
     {
         data.donor[i].username = v1[i][0];
+        cout << v1[i][0];
         data.donor[i].password = v1[i][1];
         data.donor[i].fname = v1[i][2];
         data.donor[i].lname = v1[i][3];
@@ -86,7 +87,7 @@ void recipientData(Data data, string fileName) {
         data.recipient[i].address = v1[i][3];
         data.recipient[i].email = v1[i][4];
         data.recipient[i].contactNumber = v1[i][5];
-    } 
+    }
     f.close();
 }
 

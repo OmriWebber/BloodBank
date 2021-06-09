@@ -29,6 +29,9 @@ void Login(Data data, string cat) {
         getline(cin, inPassword);
 
         if (cat == "Donor") {
+
+            cout << inName << " " << inPassword << " : " << data.donor[1].username << " " << data.donor[1].password;
+
             int size = sizeof(data.donor) / sizeof(data.donor[0]);
             if (!loginStatus)
             {
@@ -83,7 +86,7 @@ void Login(Data data, string cat) {
 
     cout << "\n\nYou have ran out of login attempts.\n\nGoing back to main menu . . .\n\n";
     system("PAUSE");
-    main(data);
+    main();
 
 success:;
     if (cat == "donor") {
