@@ -87,7 +87,7 @@ void recipientData(Data data, string fileName) {
         data.recipient[i].address = v1[i][3];
         data.recipient[i].email = v1[i][4];
         data.recipient[i].contactNumber = v1[i][5];
-    }
+    } 
     f.close();
 }
 
