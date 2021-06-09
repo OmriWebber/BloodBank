@@ -36,7 +36,8 @@ int main(Data data)
 		cout << "\n 3. Admin Login";
 		cout << "\n";
 		line(100, '-');
-
+		
+	retry:
 		cout << "\nEnter your option: ";
 		cin >> option;
 		switch (option)
@@ -51,6 +52,8 @@ int main(Data data)
 			Login(readData(), "admin");
 			break;
 		default:
+			cout << "Please enter a vlid value";
+			goto retry;
 			break;
 		}
 		break;
@@ -72,6 +75,8 @@ int main(Data data)
 			Register("recipient");
 			break;
 		default:
+			cout << "Please enter a valid value";
+			goto retry;
 			break;
 		}
 		break;

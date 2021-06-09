@@ -4,64 +4,34 @@ using namespace std;
 class donorList {
 	public: 
 		int currentUser;
-		string username;
-		string password;
-		string fname;
-		string lname;
-		string dob;
-		string nationality;
-		string ethnicity;
-		string gender;
-		string existingConditions;
-		string bloodType;
-		string contactNumber;
-		string email;
-		string address;
-		string city;
-		string lastDonation = "N/A";
+		char username[50];
+		char password[40];
+		char fname[40];
+		char lname[40];
+		char dob[40];
+		char nationality[40];
+		char ethnicity[40];
+		char gender[40];
+		char existingConditions[40];
+		char bloodType[40];
+		char contactNumber[40];
+		char email[40];
+		char address[40];
+		char city[40];
+		char lastDonation[15];
 		bool approved = false;
-
-	/*donorList() {
-		currentUser = 0;
-		username = "username";
-		password = "password";
-		fname = "fname";
-		lname = "lname";
-		dob = "dob";
-		nationality = "nationality";
-		ethnicity = "ehtnicity";
-		gender = "gender";
-		existingConditions = "existingConditions";
-		bloodType = "bloodType";
-		contactNumber = "contact Number";
-		email = "email";
-		address = "address";
-		city = "city";
-		lastDonation = "N/A";
-		approved = false;
-	}*/
 };
 
 struct recipientList {
 	int currentUser;
-	string username;
-	string password;
-	string name;
-	string address;
-	string email;
-	string contactNumber; 
+	char username;
+	char password;
+	char name;
+	char address;
+	char email;
+	char contactNumber; 
 	bool approved = false;
 
-	recipientList() {
-		currentUser = 0;
-		username = "username";
-		password = "password";
-		name = "name";
-		address = "address";
-		email = "email";
-		contactNumber = "contactNumber";
-		approved = false;
-	}
 };
 
 struct adminList {
