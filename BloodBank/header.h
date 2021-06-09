@@ -28,7 +28,7 @@ struct recipientList {
 	char password;
 	char name;
 	char address;
-	char email;
+	char email; 
 	char contactNumber; 
 	bool approved = false;
 
