@@ -8,6 +8,8 @@ using namespace std;
 int main()
 {
 	char option;
+	Data data;
+	readData(data);
 
 	cout << "\n\t\t\t\t\tOneBlood";
 	line(100, '-');
@@ -41,13 +43,13 @@ int main()
 		switch (option)
 		{
 		case '1':
-			Login(readData(), "donor");
+			Login(data, "donor");
 			break;
 		case '2':
-			Login(readData(), "recipient");
+			Login(data, "recipient");
 			break;
 		case '3':
-			Login(readData(), "admin");
+			Login(data, "admin");
 			break;
 		default:
 			cout << "Please enter a valid value";

@@ -1,24 +1,23 @@
 #include <string>
 using namespace std;
 
-class donorList {
-	public: 
+struct donorList {
 		int currentUser;
-		char username[50];
-		char password[40];
-		char fname[40];
-		char lname[40];
-		char dob[40];
-		char nationality[40];
-		char ethnicity[40];
-		char gender[40];
-		char existingConditions[40];
-		char bloodType[40];
-		char contactNumber[40];
-		char email[40];
-		char address[40];
-		char city[40];
-		char lastDonation[15];
+		string username[50];
+		string password[40];
+		string fname[40];
+		string lname[40];
+		string dob[40];
+		string nationality[40];
+		string ethnicity[40];
+		string gender[40];
+		string existingConditions[40];
+		string bloodType[40];
+		string contactNumber[40];
+		string email[40];
+		string address[40];
+		string city[40];
+		string lastDonation[15];
 		bool approved = false;
 };
 
@@ -46,9 +45,29 @@ struct Data {
 	adminList admin[5];
 };
 
+struct TempDonor {
+	int currentUser;
+	string username;
+	string password;
+	string fname;
+	string lname;
+	string dob;
+	string nationality;
+	string ethnicity;
+	string gender;
+	string existingConditions;
+	string bloodType;
+	string contactNumber;
+	string email;
+	string address;
+	string city;
+	string lastDonation;
+	bool approved = false;
+};
+
 int main();
 void line(int, char);
-struct Data readData();
+void readData(Data);
 void donorData(string, Data);
 void recipientData(string);
 void adminData(string);

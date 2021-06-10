@@ -21,6 +21,7 @@ void Register(string cat) {
     }
     if (cat == "donor")
     {
+        // CHANGE TO STRING INPUTS
         cout << "\n\t\t\t\tDonor Registration";
         line(100, '-');
         cout << "\n" << "First Name: ";

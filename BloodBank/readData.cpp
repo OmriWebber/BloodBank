@@ -9,32 +9,50 @@
 
 using namespace std;
 
-struct Data readData() {
-    Data data;
+
+void readData(Data data) {
     string donorFile = ("donors.dat");
     string recipientFile = ("recipients.dat");
     string adminFile = ("admins.txt");
 
+    
     donorData(donorFile, data);
     recipientData(recipientFile);
     adminData(adminFile);
-    return data;
 }
 
 void donorData(string fileName, Data data) {
     ifstream f;
+    TempDonor tempDonor[20];
+    string record;
     int count = 0;
     f.open(fileName, ios::in | ios::binary);
 
     if (f.is_open())
     {
-        f.read(reinterpret_cast<char*>(&data.donor), sizeof(data.donor));
-        while (!f.eof()) {
-            cout << count << "\n";
-            
-            cout << data.donor[count].fname;
+        
+        while (f.read(reinterpret_cast<char*>(&data.donor), sizeof(data.donor))) {
+            tempDonor[count].lname = data.donor->lname;
+            tempDonor[count].dob = data.donor->fname;
+            tempDonor[count].nationality = data.donor->fname;
+            tempDonor[count].ethnicity = data.donor->fname;
+            tempDonor[count].gender = data.donor->fname;
+            tempDonor[count].existingConditions = data.donor->fname;
+            tempDonor[count].bloodType = data.donor->fname;
+            tempDonor[count].contactNumber = data.donor->fname;
+            tempDonor[count].email = data.donor->fname;
+            tempDonor[count].address = data.donor->fname;
+            tempDonor[count].city = data.donor->fname;
+            tempDonor[count].lastDonation = data.donor->fname;
+            tempDonor[count].username = data.donor->username;
+            tempDonor[count].password = data.donor->password;
+            tempDonor[count].approved = data.donor->approved;
 
-            f.read(reinterpret_cast<char*>(&data.donor), sizeof(data.donor));
+            cout << tempDonor[0].username << " " << tempDonor[0].password << "\n";
+
+            count++;
+            
+            
             /*
             *data.donor[count].fname = *data.donor->fname;
             *data.donor[count].lname = *data.donor->lname;
@@ -53,10 +71,6 @@ void donorData(string fileName, Data data) {
             *data.donor[count].username = *data.donor->username;
             data.donor[count].approved = data.donor->approved;
             */
-
-            
-
-            count++;
         }
     }
     else {
