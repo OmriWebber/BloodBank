@@ -46,6 +46,8 @@ struct Data {
 	adminList admin[5];
 };
 
+
+
 int main();
 void line(int, char);
 struct Data readData();
