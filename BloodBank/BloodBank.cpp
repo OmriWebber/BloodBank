@@ -50,7 +50,7 @@ int main()
 			Login(readData(), "admin");
 			break;
 		default:
-			cout << "Please enter a vlid value";
+			cout << "Please enter a valid value";
 			goto retry;
 			break;
 		}

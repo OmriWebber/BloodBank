@@ -26,10 +26,10 @@ struct recipientList {
 	int currentUser;
 	char username[40];
 	char password[40];
-	char name[40];
+	char name[40]; 
 	char address[40];
 	char email[40]; 
-	char contactNumber[15]; 
+	char contactNumber[15];
 	bool approved = false;
 
 };
@@ -49,7 +49,7 @@ struct Data {
 int main();
 void line(int, char);
 struct Data readData();
-void donorData(string);
+void donorData(string, Data);
 void recipientData(string);
 void adminData(string);
 void donorScreen(Data, int);

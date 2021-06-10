@@ -28,8 +28,8 @@ void donorData(string fileName, Data data) {
 
     if (f.is_open())
     {
-        f.read(reinterpret_cast<char*>(&data.donor), sizeof(data.donor));
-        while (!f.eof()) {
+        while (f.read(reinterpret_cast<char*>(&data.donor), sizeof(data.donor)))
+        {
             cout << count << "\n";
             
             cout << data.donor[count].fname;

@@ -8,7 +8,7 @@ using namespace std;
 void Register(string cat) {
     Data data;
     string registerName, registerPassword;
-    string fileName = cat + "s.txt";
+    string fileName = cat + "s.dat";
     cin.ignore();
     fstream g;
 
@@ -79,4 +79,5 @@ void Register(string cat) {
     }
 
     g.close();
+    main();
 }
