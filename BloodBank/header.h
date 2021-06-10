@@ -3,21 +3,21 @@ using namespace std;
 
 struct donorList {
 		int currentUser;
-		string username[50];
-		string password[40];
-		string fname[40];
-		string lname[40];
-		string dob[40];
-		string nationality[40];
-		string ethnicity[40];
-		string gender[40];
-		string existingConditions[40];
-		string bloodType[40];
-		string contactNumber[40];
-		string email[40];
-		string address[40];
-		string city[40];
-		string lastDonation[15];
+		string username;
+		string password;
+		string fname;
+		string lname;
+		string dob;
+		string nationality;
+		string ethnicity;
+		string gender;
+		string existingConditions;
+		string bloodType;
+		string contactNumber;
+		string email;
+		string address;
+		string city;
+		string lastDonation;
 		bool approved = false;
 };
 
@@ -64,6 +64,7 @@ struct TempDonor {
 	string lastDonation;
 	bool approved = false;
 };
+
 
 int main();
 void line(int, char);
