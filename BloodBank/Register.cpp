@@ -1,7 +1,5 @@
 #include "header.h"
-#include <iostream>
-#include <fstream>
-#include <string>
+
 
 using namespace std;
 
@@ -21,39 +19,39 @@ void Register(string cat) {
     }
     if (cat == "donor")
     {
-        // CHANGE TO STRING INPUTS
+ 
         cout << "\n\t\t\t\tDonor Registration";
         line(100, '-');
         cout << "\n" << "First Name: ";
         getline(cin, data.donor->fname);
         cout << "Last Name: ";
-        getline(cin, data.donor->lname);
+        cin.getline(data.donor->lname, 40);
         cout << "Date of Birth (dd/mm/yyyy): ";
-        getline(cin, data.donor->dob);
+        cin.getline(data.donor->dob, 40);
         cout << "Nationality: ";
-        getline(cin, data.donor->nationality);
+        cin.getline(data.donor->nationality, 40);
         cout << "Ethnicity: ";
-        getline(cin, data.donor->ethnicity);
+        cin.getline(data.donor->ethnicity, 40);
         cout << "Gender: ";
-        getline(cin, data.donor->gender);
+        cin.getline(data.donor->gender, 40);
         cout << "Pre-Existing Conditions: ";
-        getline(cin, data.donor->existingConditions);
+        cin.getline(data.donor->existingConditions, 40);
         cout << "Blood Type: ";
-        getline(cin, data.donor->bloodType);
+        cin.getline(data.donor->bloodType, 40);
         cout << "Contact Number: ";
-        getline(cin, data.donor->contactNumber);
+        cin.getline(data.donor->contactNumber, 40);
         cout << "Email Address: ";
-        getline(cin, data.donor->email);
+        cin.getline(data.donor->email, 40);
         cout << "Physical Address: ";
-        getline(cin, data.donor->address);
+        cin.getline(data.donor->address, 40);
         cout << "City: ";
-        getline(cin, data.donor->city);
+        cin.getline(data.donor->city, 40);
         cout << "Date of last donation (dd/mm/yyyy)(optional): ";
-        getline(cin, data.donor->lastDonation);
+        cin.getline(data.donor->lastDonation, 15);
         cout << "\n" << "Username: ";
-        getline(cin, data.donor->username);
+        cin.getline(data.donor->username, 50);
         cout << "Password: ";
-        getline(cin, data.donor->password);
+        cin.getline(data.donor->password, 40);
 
 
         g.write(reinterpret_cast<char*>(&data.donor), sizeof(data.donor));
