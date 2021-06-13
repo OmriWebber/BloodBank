@@ -51,11 +51,6 @@ struct adminList {
 	char password[30];
 };
 
-struct Data {
-	donorList donor[donorLimit];
-	recipientList recipient[recipientLimit];
-	adminList admin[adminLimit];
-};
 
 int main();
 void line(int, char);

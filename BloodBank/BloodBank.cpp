@@ -2,8 +2,7 @@
 
 #include "header.h"
 
-int main()
-{
+int main() {
 	char option;
 
 	cout << "\n\t\t\t\t\tOneBlood";
@@ -37,19 +36,19 @@ int main()
 		cin >> option;
 		switch (option)
 		{
-		case '1':
-			Login("donor");
-			break;
-		case '2':
-			Login("recipient");
-			break;
-		case '3':
-			Login("admin");
-			break;
-		default:
-			cout << "Please enter a valid value";
-			goto retry;
-			break;
+			case '1':
+				Login("donor");
+				break;
+			case '2':
+				Login("recipient");
+				break;
+			case '3':
+				Login("admin");
+				break;
+			default:
+				cout << "Please enter a valid value";
+				goto retry;
+				break;
 		}
 		break;
 	case '2':
@@ -63,16 +62,16 @@ int main()
 		cin >> option;
 		switch (option)
 		{
-		case '1':
-			Register("donor");
-			break;
-		case '2':
-			Register("recipient");
-			break;
-		default:
-			cout << "Please enter a valid value";
-			goto retry;
-			break;
+			case '1':
+				Register("donor");
+				break;
+			case '2':
+				Register("recipient");
+				break;
+			default:
+				cout << "Please enter a valid value";
+				goto retry;
+				break;
 		}
 		break;
 	default:
