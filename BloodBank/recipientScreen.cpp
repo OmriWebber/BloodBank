@@ -1,8 +1,5 @@
 #include "header.h"
 
-
-using namespace std;
-
-void recipientScreen(Data data, int currentUser) {
+void recipientScreen(int currentUser) {
 	cout << "Recipient Screen";
 }

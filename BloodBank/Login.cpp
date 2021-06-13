@@ -1,17 +1,8 @@
 #include "header.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <sstream>
-#include <istream>
-#include <stdio.h>
 
-using namespace std;
-
-void Login(Data data, string cat) {
-    
-    string inName, inPassword;
+void Login(string cat) {
+    cout << "\n";
+    char inName[30], inPassword[30];
     int currentUser;
     bool loginStatus = false;
     cin.ignore();
@@ -24,57 +15,57 @@ void Login(Data data, string cat) {
     do
     {
         cout << "\n" << "Enter Username: ";
-        getline(cin, inName);
+        cin.getline(inName, 30);
         cout << "Enter Password: ";
-        getline(cin, inPassword);
+        cin.getline(inPassword, 30);
 
         if (cat == "Donor") {
-            cout << data.donor[0].username;
-            int size = sizeof(data.donor) / sizeof(data.donor[0]);
+            donorList* donor = donorData("donors.dat");
             if (!loginStatus)
             {
-                for (int i = 0; i < size; i++)
-                {
-                    if (inName == data.donor[i].username && inPassword == data.donor[i].password)
+                for (int i = 0; i < donorLimit; i++){
+                    if (strcmp(inName, donor[i].username) == 0 && strcmp(inPassword, donor[i].password) == 0)
                     {
                         loginStatus = true;
-                        currentUser = data.donor->currentUser;
-                        cout << "\n\nLogin Successful\n" << "Welcome, " << data.donor[i].username;
+                        currentUser = i;
+                        cout << "\n\nLogin Successful\n" << "Welcome, " << donor[i].fname;
                         goto success;
                     }
                 }
+                
             }
         }
         else if (cat == "Recipient") {
-            int size = sizeof(data.recipient) / sizeof(data.recipient[0]);
+        recipientList* recipient = recipientData("recipients.dat");
+
             if (!loginStatus)
             {
-                for (int i = 0; i < size; i++)
-                {
-                    if (inName == data.recipient[i].username && inPassword == data.recipient[i].password)
+                for (int i = 0; i < recipientLimit; i++) {
+                    if (strcmp(inName, recipient[i].username) == 0 && strcmp(inPassword, recipient[i].password) == 0)
                     {
                         loginStatus = true;
-                        currentUser = data.recipient->currentUser;
-                        cout << "\n\nLogin Successful\n" << "Welcome, " << data.recipient[i].username;
+                        currentUser = i;
+                        cout << "\n\nLogin Successful\n" << "Welcome, " << recipient[i].name;
                         goto success;
                     }
                 }
+
             }
         }
         else if (cat == "Admin") {
-            int size = sizeof(data.admin) / sizeof(data.admin[0]);
+        adminList* admin = adminData("admins.txt");
             if (!loginStatus)
             {
-                for (int i = 0; i < size; i++)
-                {
-                    if (inName == data.admin[i].username && inPassword == data.admin[i].password)
+                for (int i = 0; i < adminLimit; i++) {
+                    if (strcmp(inName, admin[i].username) == 0 && strcmp(inPassword, admin[i].password) == 0)
                     {
                         loginStatus = true;
-                        currentUser = data.admin->currentUser;
-                        cout << "\n\nLogin Successful\n" << "Welcome, " << data.admin[i].username;
+                        currentUser = i;
+                        cout << "\n\nLogin Successful\n" << "Welcome, " << admin[i].username;
                         goto success;
                     }
                 }
+
             }
         }
         
@@ -87,11 +78,11 @@ void Login(Data data, string cat) {
     main();
 
 success:;
-    if (cat == "donor") {
-        donorScreen(data, currentUser);
-    } else if (cat == "recipient") {
-        recipientScreen(data, currentUser);
-    } else if (cat == "admin") {
-        adminScreen(data, currentUser);
+    if (cat == "Donor") {
+        donorScreen(currentUser);
+    } else if (cat == "Recipient") {
+        recipientScreen(currentUser);
+    } else if (cat == "Admin") {
+        adminScreen(currentUser);
     }
 }

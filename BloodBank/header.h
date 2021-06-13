@@ -6,80 +6,64 @@
 #include <sstream>
 #include <istream>
 #include <stdio.h>
+#include <stdlib.h>
 using namespace std;
+
+const int donorLimit = 5;
+const int recipientLimit = 5;
+const int adminLimit = 5;
 
 struct donorList {
 	int currentUser;
-	string username;
-	string password;
-	string fname;
-	string lname;
-	string dob;
-	string nationality;
-	string ethnicity;
-	string gender;
-	string existingConditions;
-	string bloodType;
-	string contactNumber;
-	string email;
-	string address;
-	string city;
-	string lastDonation;
+	char username[30];
+	char password[30];
+	char fname[30];
+	char lname[30];
+	char dob[30];
+	char nationality[30];
+	char ethnicity[30];
+	char gender[30];
+	char existingConditions[30];
+	char bloodType[30];
+	char contactNumber[30];
+	char email[30];
+	char address[30];
+	char city[30];
+	char lastDonation[30];
 	bool approved = false;
 };
 
 struct recipientList {
 	int currentUser;
-	char username[40];
-	char password[40];
-	char name[40]; 
-	char address[40];
-	char email[40]; 
-	char contactNumber[15];
+	char username[30];
+	char password[30];
+	char name[30];
+	char address[30];
+	char email[30];
+	char contactNumber[30];
 	bool approved = false;
 
 };
 
 struct adminList {
 	int currentUser;
-	string username;
-	string password;
+	char username[30];
+	char password[30];
 };
 
 struct Data {
-	donorList donor[20];
-	recipientList recipient[10];
-	adminList admin[5];
-};
-
-struct TempDonor {
-	int currentUser;
-	char username[40];
-	char password[40];
-	char fname[40];
-	char lname[40];
-	char dob[40];
-	char nationality[40];
-	char ethnicity[40];
-	char gender[40];
-	char existingConditions[40];
-	char bloodType[40];
-	char contactNumber[40];
-	char email[40];
-	char address[40];
-	char city[40];
-	char lastDonation[40];
-	bool approved = false;
+	donorList donor[donorLimit];
+	recipientList recipient[recipientLimit];
+	adminList admin[adminLimit];
 };
 
 int main();
 void line(int, char);
-void readData(Data);
-void donorData(string, Data);
-void recipientData(string);
-void adminData(string);
-void donorScreen(Data, int);
-void recipientScreen(Data, int);
-void adminScreen(Data, int);
-void Login(Data, string);
+struct donorList* donorData(string);
+struct recipientList* recipientData(string);
+struct adminList* adminData(string);
+void donorScreen(int);
+void recipientScreen(int);
+void adminScreen(int);
+void Login(string);
 void Register(string);

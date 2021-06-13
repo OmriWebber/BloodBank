@@ -1,15 +1,10 @@
 // BloodBank.cpp
 
 #include "header.h"
-#include <iostream>
-
-using namespace std;
 
 int main()
 {
 	char option;
-	Data data;
-	readData(data);
 
 	cout << "\n\t\t\t\t\tOneBlood";
 	line(100, '-');
@@ -43,13 +38,13 @@ int main()
 		switch (option)
 		{
 		case '1':
-			Login(data, "donor");
+			Login("donor");
 			break;
 		case '2':
-			Login(data, "recipient");
+			Login("recipient");
 			break;
 		case '3':
-			Login(data, "admin");
+			Login("admin");
 			break;
 		default:
 			cout << "Please enter a valid value";
