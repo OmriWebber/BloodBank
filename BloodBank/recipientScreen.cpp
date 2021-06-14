@@ -15,6 +15,7 @@ void recipientScreen(int currentUser) {
 	cout << "\n";
 	line(100, '-');
 
+retry1:;
 	cout << "\nEnter your option: ";
 	cin >> option;
 
@@ -24,6 +25,7 @@ void recipientScreen(int currentUser) {
 		char bloodtype_s[30];
 		cout << "Enter blood type: ";
 		cin.getline(bloodtype_s, 30);
+		searchByBloodType(bloodtype_s);
 		break;
 	case '2':
 		break;
@@ -35,6 +37,8 @@ void recipientScreen(int currentUser) {
 		main();
 		break;
 	default:
+		cout << "Please enter a valid value";
+		goto retry1;
 		break;
 	}
 }
@@ -42,7 +46,7 @@ void recipientScreen(int currentUser) {
 struct donorList* searchByBloodType(char s[30]) {
 	donorList* donor = donorData("donors.dat");
 	for (int i = 0; i < donorLimit; i++){
-		
+		cout << donor[i].bloodType;
 	}
 
 

@@ -18,9 +18,9 @@ int main() {
 
 	line(100, '-');
 
+retry1:;
 	cout << "\nEnter your option: ";
 	cin >> option;
-
 	switch (option)
 	{
 	case '1':
@@ -31,7 +31,7 @@ int main() {
 		cout << "\n";
 		line(100, '-');
 		
-	retry:
+	retry2:
 		cout << "\nEnter your option: ";
 		cin >> option;
 		switch (option)
@@ -47,7 +47,7 @@ int main() {
 				break;
 			default:
 				cout << "Please enter a valid value";
-				goto retry;
+				goto retry2;
 				break;
 		}
 		break;
@@ -58,6 +58,7 @@ int main() {
 		cout << "\n";
 		line(100, '-');
 
+	retry3:;
 		cout << "\nEnter your option: ";
 		cin >> option;
 		switch (option)
@@ -70,11 +71,14 @@ int main() {
 				break;
 			default:
 				cout << "Please enter a valid value";
-				goto retry;
+				goto retry3;
 				break;
 		}
 		break;
 	default:
+		cout << "Please enter a valid value";
+		goto retry1;
+		break;
 		break;
 	}
 

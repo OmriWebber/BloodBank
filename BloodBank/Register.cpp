@@ -15,60 +15,128 @@ void Register(string cat) {
     }
     if (cat == "donor")
     {
-        donorList donor;
+        donorList donorIn;
         cout << "\n\t\t\t\tDonor Registration";
         line(100, '-');
-        cout << "\n" << "First Name: ";
-        cin.getline(donor.fname, 30);
-        cout << "Last Name: ";
-        cin.getline(donor.lname, 30);
-        cout << "Date of Birth (dd/mm/yyyy): ";
-        cin.getline(donor.dob, 30);
-        cout << "Nationality: ";
-        cin.getline(donor.nationality, 30);
-        cout << "Ethnicity: ";
-        cin.getline(donor.ethnicity, 30);
-        cout << "Gender: ";
-        cin.getline(donor.gender, 30);
-        cout << "Pre-Existing Conditions: ";
-        cin.getline(donor.existingConditions, 30);
-        cout << "Blood Type: ";
-        cin.getline(donor.bloodType, 30);
-        cout << "Contact Number: ";
-        cin.getline(donor.contactNumber, 30);
-        cout << "Email Address: ";
-        cin.getline(donor.email, 30);
-        cout << "Physical Address: ";
-        cin.getline(donor.address, 30);
-        cout << "City: ";
-        cin.getline(donor.city, 30);
-        cout << "Date of last donation (dd/mm/yyyy)(optional): ";
-        cin.getline(donor.lastDonation, 30);
-        cout << "\n" << "Username: ";
-        cin.getline(donor.username, 30);
-        cout << "Password: ";
-        cin.getline(donor.password, 30);
+        cout << "\n";
+        do {
+            cout << "First Name: ";
+            cin.getline(donorIn.fname, 30);
+        } while (!validate(donorIn.fname, "fname"));
+        
+        do
+        {
+            cout << "Last Name: ";
+            cin.getline(donorIn.lname, 30);
+        } while (!validate(donorIn.lname, "lname"));
+        
+        do
+        {
+            cout << "Date of Birth (dd/mm/yyyy): ";
+            cin.getline(donorIn.dob, 30);
+        } while (!validate(donorIn.dob, "dob"));
+        
+        do
+        {
+            cout << "Nationality: ";
+            cin.getline(donorIn.nationality, 30);
+        } while (!validate(donorIn.nationality, "nationality"));
+        
+        do
+        {
+            cout << "Ethnicity: ";
+            cin.getline(donorIn.ethnicity, 30);
+        } while (!validate(donorIn.ethnicity, "ethnicity"));
+        
+        do
+        {
+            cout << "Gender: ";
+            cin.getline(donorIn.gender, 30);
+        } while (!validate(donorIn.gender, "gender"));
 
-        g.write(reinterpret_cast<char*>(&donor), sizeof(donorList));
+        do
+        {
+            cout << "Pre-Existing Conditions: ";
+            cin.getline(donorIn.existingConditions, 30);
+        } while (!validate(donorIn.existingConditions, "existingConditions"));
+        
+        do
+        {
+
+        } while (!validate(donorIn.bloodType, "bloodType"));
+        cout << "Blood Type: ";
+        cin.getline(donorIn.bloodType, 30);
+
+        do
+        {
+            cout << "Contact Number: ";
+            cin.getline(donorIn.contactNumber, 30);
+        } while (!validate(donorIn.contactNumber, "contactNumber"));
+        
+
+        do
+        {
+            cout << "Email Address: ";
+            cin.getline(donorIn.email, 30);
+        } while (!validate(donorIn.email, "email"));
+        
+
+        do
+        {
+            cout << "Physical Address: ";
+            cin.getline(donorIn.address, 30);
+        } while (!validate(donorIn.address, "address"));
+        
+
+        do
+        {
+            cout << "City: ";
+            cin.getline(donorIn.city, 30);
+        } while (!validate(donorIn.city, "city"));
+        
+
+        do
+        {
+            cout << "Date of last donation (dd/mm/yyyy)(optional): ";
+            cin.getline(donorIn.lastDonation, 30);
+        } while (!validate(donorIn.lastDonation, "lastDonation"));
+        
+
+        do
+        {
+            cout << "\n" << "Username: ";
+            cin.getline(donorIn.username, 30);
+        } while (!validate(donorIn.username, "username"));
+        
+
+        do
+        {
+            cout << "Password: ";
+            cin.getline(donorIn.password, 30);
+        } while (!validate(donorIn.password, "password"));
+        
+
+
+        g.write(reinterpret_cast<char*>(&donorIn), sizeof(donorList));
 
     } else if (cat == "recipient") {
-        recipientList recipient;
+        recipientList recipientIn;
         cout << "\n\t\t\t\tRecipient Registration";
         line(100, '-');
         cout << "\n" << "Recipient Name: ";
-        cin.getline(recipient.name, 30);
+        cin.getline(recipientIn.name, 30);
         cout << "Physical Address: ";
-        cin.getline(recipient.address, 30);
+        cin.getline(recipientIn.address, 30);
         cout << "Email: ";
-        cin.getline(recipient.email, 30);
+        cin.getline(recipientIn.email, 30);
         cout << "Contact Number: ";
-        cin.getline(recipient.contactNumber, 30);
+        cin.getline(recipientIn.contactNumber, 30);
         cout << "\n" << "Username: ";
-        cin.getline(recipient.username, 30);
+        cin.getline(recipientIn.username, 30);
         cout << "Password: ";
-        cin.getline(recipient.password, 30);
+        cin.getline(recipientIn.password, 30);
 
-        g.write(reinterpret_cast<char*>(&recipient), sizeof(recipientList));
+        g.write(reinterpret_cast<char*>(&recipientIn), sizeof(recipientList));
 
     }
 

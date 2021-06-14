@@ -6,7 +6,7 @@ void Login(string cat) {
     int currentUser;
     cin.ignore();
     cat[0] = toupper(cat[0]);
-    cout << "\n\t\t\t\t" << cat << " Login";
+    cout << "\n\t\t\t\t\n" << cat << " Login";
     line(100, '-');
     int maxAttempts = 0;
     
@@ -30,11 +30,9 @@ void Login(string cat) {
         }
         else if (cat == "Recipient") {
             recipientList* recipient = recipientData("recipients.dat");
-            
             for (int i = 0; i < recipientLimit; i++) {
                 if (strcmp(inName, recipient[i].username) == 0 && strcmp(inPassword, recipient[i].password) == 0)
                 {
-                    cout << "Username " << i << ": " << recipient[i].username << endl;
                     currentUser = i;
                     cout << "\n\nLogin Successful\n" << "Welcome, " << recipient[i].username;
                     goto success;

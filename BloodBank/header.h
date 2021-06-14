@@ -7,6 +7,10 @@
 #include <istream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <regex>
+#include <iomanip>
+#include <ctime>
+
 using namespace std;
 
 const int donorLimit = 5;
@@ -62,3 +66,5 @@ void recipientScreen(int);
 void adminScreen(int);
 void Login(string);
 void Register(string);
+
+bool validate(char[30], string);

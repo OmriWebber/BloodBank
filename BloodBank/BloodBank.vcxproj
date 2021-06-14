@@ -147,6 +147,7 @@
     <ClCompile Include="Register.cpp" />
     <ClCompile Include="adminScreen.cpp" />
     <ClCompile Include="readData.cpp" />
+    <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
