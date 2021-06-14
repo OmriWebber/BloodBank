@@ -5,6 +5,8 @@ void donorScreen(int currentUser) {
 	char option;
 
 reset1:;
+	//Display user info at top of input screen...... Maybe
+
 	cout << "\n\t\t\t\t\tDonor Screen - " << donor[currentUser].username;
 	line(100, '-');
 	cout << "\n 1. Prodedure to donate blood";
