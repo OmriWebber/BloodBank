@@ -5,7 +5,7 @@
 int main() {
 	char option;
 
-	cout << "\n\t\t\t\t\tOneBlood";
+	cout << "\n\t\t\t\tOneBlood - Donor Bank Service";
 	line(100, '-');
 
 	cout << "\nInformation about OneBlood\n";
