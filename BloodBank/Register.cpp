@@ -62,10 +62,10 @@ void Register(string cat) {
         
         do
         {
-
+            cout << "Blood Type: ";
+            cin.getline(donorIn.bloodType, 30);
         } while (!validate(donorIn.bloodType, "bloodType"));
-        cout << "Blood Type: ";
-        cin.getline(donorIn.bloodType, 30);
+        
 
         do
         {
