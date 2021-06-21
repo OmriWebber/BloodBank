@@ -54,6 +54,7 @@ reset1:;
 		cout << "\n 1. Update contact details";
 		cout << "\n 2. Update address";
 		cout << "\n 3. Update health status";
+		cout << "\n 4. <- Go Back";
 		cout << "\n";
 		line(100, '-');
 

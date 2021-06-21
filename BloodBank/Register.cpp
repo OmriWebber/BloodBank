@@ -115,9 +115,9 @@ void Register(string cat) {
             cin.getline(donorIn.password, 30);
         } while (!validate(donorIn.password, "password"));
         
-
-
         g.write(reinterpret_cast<char*>(&donorIn), sizeof(donorList));
+
+        cout << "\n\nRegistration Successful.\n\n";
 
     } else if (cat == "recipient") {
         recipientList recipientIn;
@@ -137,6 +137,8 @@ void Register(string cat) {
         cin.getline(recipientIn.password, 30);
 
         g.write(reinterpret_cast<char*>(&recipientIn), sizeof(recipientList));
+        
+        cout << "\n\nRegistration Successful.\n\n";
 
     }
 

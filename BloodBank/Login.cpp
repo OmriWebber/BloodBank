@@ -34,7 +34,7 @@ void Login(string cat) {
                 if (strcmp(inName, recipient[i].username) == 0 && strcmp(inPassword, recipient[i].password) == 0)
                 {
                     currentUser = i;
-                    cout << "\n\nLogin Successful\n" << "Welcome, " << recipient[i].username;
+                    cout << "\n\nLogin Successful\n" << "Welcome, " << recipient[i].name;
                     goto success;
                 }
             }
