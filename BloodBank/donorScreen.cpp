@@ -63,13 +63,13 @@ reset1:;
 		switch (option)
 		{
 		case '1':
-			
+			updateDonorContact(currentUser);
 			break;
 		case '2':
-			
+			updateDonorAddress(currentUser);
 			break;
 		case '3':
-			
+			updateDonorHealth(currentUser);
 			break;
 		default:
 			cout << "Please enter a valid value";

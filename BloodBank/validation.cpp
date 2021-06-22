@@ -20,7 +20,6 @@ bool validate(char input[30], string type) {
 			return true;
 		}
 	} else if (type == "dob"){
-		
 		if (strlen(input) <= 0 || strlen(input) > 30)
 		{
 			cout << "Date of Birth invalid, please try again...\n";
@@ -33,9 +32,9 @@ bool validate(char input[30], string type) {
 			getline(stm, day, delim);
 			getline(stm, month, delim);
 			getline(stm, year, delim);
-			int d = stoi(day);
-			int m = stoi(month);
-			int y = stoi(year);
+			int d = 0; //= stoi(day);
+			int m = 0; //= stoi(month);
+			int y = 0; //= stoi(year);
 
 			if (!(1582 <= y)) {
 				cout << "Date of Birth invalid, please try again...\n";
@@ -123,6 +122,10 @@ bool validate(char input[30], string type) {
 			return true;
 		}
 	} else if (type == "contactNumber") {
+		for (int i = 0; i < 30; i++)
+		{
+			cout << input[i];
+		}
 		if (strlen(input) <= 0 || strlen(input) > 30)
 		{
 			return false;
@@ -139,11 +142,17 @@ bool validate(char input[30], string type) {
 			return true;
 		}
 	} else if (type == "address") {
+		for (int i = 0; i < 30; i++)
+		{
+			cout << input[i];
+		}
 		if (strlen(input) <= 0 || strlen(input) > 30)
 		{
+			cout << strlen(input);
 			return false;
 		}
 		else {
+			cout << "true";
 			return true;
 		}
 	} else if (type == "city") {
