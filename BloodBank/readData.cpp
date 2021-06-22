@@ -35,14 +35,24 @@ struct recipientList* recipientData(string fileName) {
 struct adminList* adminData(string fileName) {
     adminList admin[adminLimit];
     ifstream a;
-    a.open(fileName, ios::in | ios::binary);
+    string line;
+    a.open(fileName, ios::out);
 
-    if (a.is_open())
+    if (!a)
     {
-        a.read(reinterpret_cast<char*>(admin), adminLimit * sizeof(adminList));
-    }
-    else {
-        cout << "\nFile unable to access ....";
+        int i = 0;
+        
+        while (!a.eof()){
+            if (getline(a, line))
+            {
+                istringstream ss(line);
+                ss >> admin[i].username >> admin[i].password;
+            }
+            i++;
+        }
+        cout << i;
+    } else {
+        cout << "\nFile unable to access ....\n";
     }
     a.close();
     return admin;
