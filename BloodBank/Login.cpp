@@ -38,17 +38,15 @@ void Login(string cat) {
                     goto success;
                 }
             }
-        }
+        } 
         else if (cat == "Admin") {
-            adminList* admin = adminData("admins.txt");
-            for (int i = 0; i < adminLimit; i++) {
-                if (strcmp(inName, admin[i].username) == 0 && strcmp(inPassword, admin[i].password) == 0)
+            cout << inName << " " << inPassword;
+                if (strcmp(inName, "admin") == 0 && strcmp(inPassword, "admin") == 0)
                 {
-                    currentUser = i;
-                    cout << "\n\nLogin Successful\n" << "Welcome, " << admin[i].username;
+                    cout << "\n\nLogin Successful\n" << "Welcome, Admin.";
                     goto success;
                 }
-            }
+            
         }
         
         cout << "Incorrect name or password\n";
@@ -65,6 +63,6 @@ success:;
     } else if (cat == "Recipient") {
         recipientScreen(currentUser);
     } else if (cat == "Admin") {
-        adminScreen(currentUser);
+        adminScreen();
     }
 }
