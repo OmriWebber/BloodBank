@@ -6,10 +6,9 @@ void updateDonorContact(int currentUser) {
 	line(100, '-');
 	
 	fstream g;
-	g.open("donors.dat", ios::in | ios::app | ios::binary);
+	g.open("donors.dat", ios::in | ios::binary);
 
 	if (!g.is_open())
-
 	{
 		cout << "Error! Could not open file\n";
 	}
@@ -26,7 +25,7 @@ void updateDonorContact(int currentUser) {
 
 	g.close();
 
-	cout << "\n\Contact Number updated successfully.\n";
+	cout << "\n\nContact Number updated successfully.\n";
 	system("PAUSE");
 	donorScreen(currentUser);
 }
@@ -37,7 +36,7 @@ void updateDonorAddress(int currentUser) {
 	line(100, '-');
 
 	fstream g;
-	g.open("donors.dat", ios::in | ios::app | ios::binary);
+	g.open("donors.dat", ios::in | ios::binary);
 
 	if (!g.is_open())
 
@@ -74,7 +73,7 @@ void updateDonorHealth(int currentUser) {
 	line(100, '-');
 
 	fstream g;
-	g.open("donors.dat", ios::in | ios::app | ios::binary);
+	g.open("donors.dat", ios::in | ios::binary);
 
 	if (!g.is_open())
 
@@ -99,7 +98,7 @@ void updateDonorHealth(int currentUser) {
 	g.write(reinterpret_cast<char*>(donor), sizeof(donorList));
 
 	g.close();
-	cout << "\n\Health Status updated successfully.\n";
+	cout << "\n\nHealth Status updated successfully.\n";
 	system("PAUSE");
 	donorScreen(currentUser);
 }

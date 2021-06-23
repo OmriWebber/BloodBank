@@ -46,7 +46,6 @@ struct recipientList {
 	char email[30];
 	char contactNumber[30];
 	bool approved = false;
-
 };
 
 struct adminList {
