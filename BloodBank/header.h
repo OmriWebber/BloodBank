@@ -46,7 +46,6 @@ struct recipientList {
 	char email[30];
 	char contactNumber[30];
 	bool approved = false;
-
 };
 
 struct adminList {
@@ -62,6 +61,9 @@ struct donorList* donorData(string);
 struct recipientList* recipientData(string);
 struct adminList* adminData(string);
 void donorScreen(int);
+void updateDonorContact(int);
+void updateDonorAddress(int);
+void updateDonorHealth(int);
 void recipientScreen(int);
 void adminScreen(int);
 void Login(string);
