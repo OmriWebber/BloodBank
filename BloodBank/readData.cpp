@@ -2,7 +2,7 @@
 
 donorList donor[donorLimit];
 recipientList recipient[recipientLimit];
-adminList admin[adminLimit];
+
 
 struct donorList* donorData(string fileName) {
     ifstream d;
@@ -32,29 +32,4 @@ struct recipientList* recipientData(string fileName) {
     }
     r.close();
     return recipient;
-}
-
-struct adminList* adminData(string fileName) {
-    ifstream a;
-    string line;
-    a.open(fileName, ios::out);
-
-    if (!a)
-    {
-        int i = 0;
-        
-        while (!a.eof()){
-            if (getline(a, line))
-            {
-                istringstream ss(line);
-                ss >> admin[i].username >> admin[i].password;
-            }
-            i++;
-        }
-        cout << i;
-    } else {
-        cout << "\nFile unable to access ....\n";
-    }
-    a.close();
-    return admin;
 }

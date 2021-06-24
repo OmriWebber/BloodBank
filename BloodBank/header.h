@@ -48,13 +48,6 @@ struct recipientList {
 	bool approved = false;
 };
 
-struct adminList {
-	uint32_t id;
-	char username[30];
-	char password[30];
-};
-
-
 int main();
 void line(int, char);
 struct donorList* donorData(string);
