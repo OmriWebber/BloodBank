@@ -1,27 +1,55 @@
 #include "header.h"
 
-void updateDonorContact(int currentUser) {
-	donorList* donor = donorData("donors.dat");
+int position = 0;
+bool flag = false;
+
+void updateDonorContact(uint32_t currentUser) {
 	cin.ignore();
 	line(100, '-');
-	
+	donorList donor;
 	fstream g;
-	g.open("donors.dat", ios::in | ios::binary);
+	g.open("donors.dat", ios::in | ios::out | ios::binary);
 
-	if (!g.is_open())
+	if (g.is_open())
 	{
-		cout << "Error! Could not open file\n";
+		while (!g.eof())
+		{
+			g.read(reinterpret_cast<char*>(&donor), sizeof(donor));
+
+			position = g.tellg();
+
+			if (currentUser == donor.id) {
+				cout << "\n\nOld Contact Number: " << donor.contactNumber;
+
+				g.seekp(position - (sizeof(donor)));
+				do
+				{
+					cout << "\nPlease enter new contact number: ";
+					cin.getline(donor.contactNumber, 30);
+				} while (!validate(donor.contactNumber, "contactNumber"));
+
+				g.write(reinterpret_cast<char*>(&donor), sizeof(donor));
+
+				flag = false;
+				cout << "\n\nContact Number updated successfully.\n";
+				break;
+			}
+			else {
+				flag = true;
+			}
+		}
+		
 	}
 	else {
-		cout << "\n\nOld Contact Number: " << donor[currentUser].contactNumber;
-		do
-		{
-			cout << "\nPlease enter new contact number: ";
-			cin.getline(donor[currentUser].contactNumber, 30);
-		} while (!validate(donor[currentUser].contactNumber, "contactNumber"));
+		cout << "Error! Could not open file\n";
 	}
 
-	g.write(reinterpret_cast<char*>(donor), sizeof(donorList));
+	if (flag)
+	{
+		cout << "\nRecord not found...";
+	}
+
+	
 
 	g.close();
 
@@ -30,7 +58,7 @@ void updateDonorContact(int currentUser) {
 	donorScreen(currentUser);
 }
 
-void updateDonorAddress(int currentUser) {
+void updateDonorAddress(uint32_t currentUser) {
 	donorList* donor = donorData("donors.dat");
 	cin.ignore();
 	line(100, '-');
@@ -67,7 +95,7 @@ void updateDonorAddress(int currentUser) {
 	donorScreen(currentUser);
 }
 
-void updateDonorHealth(int currentUser) {
+void updateDonorHealth(uint32_t currentUser) {
 	donorList* donor = donorData("donors.dat");
 	cin.ignore();
 	line(100, '-');

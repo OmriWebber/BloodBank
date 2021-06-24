@@ -19,6 +19,9 @@ void Register(string cat) {
         cout << "\n\t\t\t\tDonor Registration";
         line(100, '-');
         cout << "\n";
+
+        donorIn.id = reinterpret_cast<uint32_t>(&donorIn);
+
         do {
             cout << "First Name: ";
             cin.getline(donorIn.fname, 30);
@@ -123,6 +126,7 @@ void Register(string cat) {
         recipientList recipientIn;
         cout << "\n\t\t\t\tRecipient Registration";
         line(100, '-');
+        recipientIn.id = reinterpret_cast<uint32_t>(&recipientIn);
         cout << "\n" << "Recipient Name: ";
         cin.getline(recipientIn.name, 30);
         cout << "Physical Address: ";

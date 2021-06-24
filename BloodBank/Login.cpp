@@ -3,7 +3,7 @@
 void Login(string cat) {
     cout << "\n";
     char inName[30], inPassword[30];
-    int currentUser;
+    uint32_t currentUser;
     cin.ignore();
     cat[0] = toupper(cat[0]);
     cout << "\n\t\t\t\t\n" << cat << " Login";
@@ -22,7 +22,7 @@ void Login(string cat) {
             for (int i = 0; i < donorLimit; i++){
                 if (strcmp(inName, donor[i].username) == 0 && strcmp(inPassword, donor[i].password) == 0)
                 {
-                    currentUser = i;
+                    currentUser = donor[i].id;
                     cout << "\n\nLogin Successful\n" << "Welcome, " << donor[i].fname;
                     goto success;
                 }
@@ -33,7 +33,7 @@ void Login(string cat) {
             for (int i = 0; i < recipientLimit; i++) {
                 if (strcmp(inName, recipient[i].username) == 0 && strcmp(inPassword, recipient[i].password) == 0)
                 {
-                    currentUser = i;
+                    currentUser = recipient[i].id;
                     cout << "\n\nLogin Successful\n" << "Welcome, " << recipient[i].name;
                     goto success;
                 }

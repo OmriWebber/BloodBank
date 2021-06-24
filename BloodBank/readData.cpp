@@ -5,7 +5,6 @@ recipientList recipient[recipientLimit];
 adminList admin[adminLimit];
 
 struct donorList* donorData(string fileName) {
-    
     ifstream d;
     d.open(fileName, ios::in | ios::binary);
 
@@ -21,7 +20,6 @@ struct donorList* donorData(string fileName) {
 }
 
 struct recipientList* recipientData(string fileName) {
-    
     ifstream r;
     r.open(fileName, ios::in | ios::binary);
 
@@ -37,7 +35,6 @@ struct recipientList* recipientData(string fileName) {
 }
 
 struct adminList* adminData(string fileName) {
-    
     ifstream a;
     string line;
     a.open(fileName, ios::out);
