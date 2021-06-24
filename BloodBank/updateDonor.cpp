@@ -3,7 +3,7 @@
 int position = 0;
 bool flag = false;
 
-void updateDonorContact(uint32_t currentUser) {
+void updateDonorContact(int currentUser) {
 	cin.ignore();
 	line(100, '-');
 	donorList donor;
@@ -58,7 +58,7 @@ void updateDonorContact(uint32_t currentUser) {
 	donorScreen(currentUser);
 }
 
-void updateDonorAddress(uint32_t currentUser) {
+void updateDonorAddress(int currentUser) {
 	donorList* donor = donorData("donors.dat");
 	cin.ignore();
 	line(100, '-');
@@ -95,7 +95,7 @@ void updateDonorAddress(uint32_t currentUser) {
 	donorScreen(currentUser);
 }
 
-void updateDonorHealth(uint32_t currentUser) {
+void updateDonorHealth(int currentUser) {
 	donorList* donor = donorData("donors.dat");
 	cin.ignore();
 	line(100, '-');

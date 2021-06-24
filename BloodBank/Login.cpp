@@ -3,7 +3,7 @@
 void Login(string cat) {
     cout << "\n";
     char inName[30], inPassword[30];
-    uint32_t currentUser;
+    int currentUser = 0;
     cin.ignore();
     cat[0] = toupper(cat[0]);
     cout << "\n\t\t\t\t\n" << cat << " Login";

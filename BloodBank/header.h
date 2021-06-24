@@ -18,7 +18,7 @@ const int recipientLimit = 5;
 const int adminLimit = 5;
 
 struct donorList {
-	uint32_t id;
+	int id;
 	char username[30];
 	char password[30];
 	char fname[30];
@@ -38,7 +38,7 @@ struct donorList {
 };
 
 struct recipientList {
-	uint32_t id;
+	int id;
 	char username[30];
 	char password[30];
 	char name[30];
@@ -53,12 +53,12 @@ void line(int, char);
 struct donorList* donorData(string);
 struct recipientList* recipientData(string);
 struct adminList* adminData(string);
-void donorScreen(uint32_t);
-void updateDonorContact(uint32_t);
-void updateDonorAddress(uint32_t);
-void updateDonorHealth(uint32_t);
-void recipientScreen(uint32_t);
-void adminScreen(uint32_t);
+void donorScreen(int);
+void updateDonorContact(int);
+void updateDonorAddress(int);
+void updateDonorHealth(int);
+void recipientScreen(int);
+void adminScreen();
 void Login(string);
 void Register(string);
 
