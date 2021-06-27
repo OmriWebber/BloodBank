@@ -1,132 +1,174 @@
 #include "header.h"
 
-int position = 0;
 bool flag = false;
 
-void updateDonorContact(int currentUser) {
-	cin.ignore();
+void updateDonorContact(uint32_t currentUser) {
 	line(100, '-');
 	donorList donor;
 	fstream g;
 	g.open("donors.dat", ios::in | ios::out | ios::binary);
-
-	if (g.is_open())
-	{
-		while (!g.eof())
-		{
+	if (g.is_open()) {
+		while (!g.eof()) {
 			g.read(reinterpret_cast<char*>(&donor), sizeof(donor));
-
-			position = g.tellg();
-
+			int position = g.tellg();
 			if (currentUser == donor.id) {
 				cout << "\n\nOld Contact Number: " << donor.contactNumber;
-
-				g.seekp(position - (sizeof(donor)));
+				g.seekp(position - (static_cast<unsigned __int64>(sizeof(donor))));
 				do
 				{
 					cout << "\nPlease enter new contact number: ";
 					cin.getline(donor.contactNumber, 30);
 				} while (!validate(donor.contactNumber, "contactNumber"));
-
 				g.write(reinterpret_cast<char*>(&donor), sizeof(donor));
-
 				flag = false;
-				cout << "\n\nContact Number updated successfully.\n";
+				cout << "\n\nContact Number updated successfully.\n\n";
 				break;
 			}
 			else {
 				flag = true;
 			}
 		}
-		
-	}
-	else {
-		cout << "Error! Could not open file\n";
+	} else {
+		cout << "Error! Could not open file\n\n";
 	}
 
-	if (flag)
-	{
-		cout << "\nRecord not found...";
+	if (flag) {
+		cout << "\nRecord not found...\n\n";
 	}
-
-	
 
 	g.close();
 
-	cout << "\n\nContact Number updated successfully.\n";
 	system("PAUSE");
 	donorScreen(currentUser);
 }
 
-void updateDonorAddress(int currentUser) {
-	donorList* donor = donorData("donors.dat");
+void updateDonorAddress(uint32_t currentUser) {
 	cin.ignore();
 	line(100, '-');
-
+	donorList donor;
 	fstream g;
-	g.open("donors.dat", ios::in | ios::binary);
+	g.open("donors.dat", ios::in | ios::out | ios::binary);
+	if (g.is_open()) {
+		while (!g.eof()) {
+			g.read(reinterpret_cast<char*>(&donor), sizeof(donor));
+			int position = g.tellg();
+			if (currentUser == donor.id) {
+				g.seekp(position - (static_cast<unsigned __int64>(sizeof(donor))));
+				cout << "\n\nOld Address: " << donor.address;
+				do
+				{
+					cout << "\nNew address: ";
+					cin.getline(donor.address, 30);
+				} while (!validate(donor.address, "address"));
 
-	if (!g.is_open())
-
-	{
-		cout << "Error! Could not open file\n";
+				cout << "\n\nOld Address: " << donor.city;
+				do
+				{
+					cout << "\nNew city: ";
+					cin.getline(donor.city, 30);
+				} while (!validate(donor.city, "city"));
+				g.write(reinterpret_cast<char*>(&donor), sizeof(donor));
+				flag = false;
+				cout << "\n\nAddress updated successfully.\n\n";
+				break;
+			} else {
+				flag = true;
+			}
+		}
+	} else {
+		cout << "Error! Could not open file\n\n";
 	}
-	else {
-		cout << "\n\nOld Address: " << donor[currentUser].address << ", " << donor[currentUser].city;
-		do
-		{
-			cout << "\nPlease enter new address: ";
-			cin.getline(donor[currentUser].address, 30);
-		} while (!validate(donor[currentUser].address, "address"));
 
-		do
-		{
-			cout << "Please enter new city: ";
-			cin.getline(donor[currentUser].city, 30);
-		} while (!validate(donor[currentUser].city, "city"));
+	if (flag) {
+		cout << "\nRecord not found...\n\n";
 	}
-
-	g.write(reinterpret_cast<char*>(donor), sizeof(donorList));
 
 	g.close();
 
-	cout << "\n\nAddress updated successfully.\n";
 	system("PAUSE");
 	donorScreen(currentUser);
 }
 
-void updateDonorHealth(int currentUser) {
-	donorList* donor = donorData("donors.dat");
+void updateDonorHealth(uint32_t currentUser) {
 	cin.ignore();
 	line(100, '-');
-
+	donorList donor;
 	fstream g;
-	g.open("donors.dat", ios::in | ios::binary);
-
-	if (!g.is_open())
-
-	{
-		cout << "Error! Could not open file\n";
+	g.open("donors.dat", ios::in | ios::out | ios::binary);
+	if (g.is_open()) {
+		while (!g.eof()) {
+			g.read(reinterpret_cast<char*>(&donor), sizeof(donor));
+			int position = g.tellg();
+			if (currentUser == donor.id) {
+				cout << "\n\nOld Existing Conditions: " << donor.existingConditions;
+				g.seekp(position - (static_cast<unsigned __int64>(sizeof(donor))));
+				do
+				{
+					cout << "\nNew Existing Conditions: ";
+					cin.getline(donor.existingConditions, 30);
+				} while (!validate(donor.existingConditions, "existingConditions"));
+				g.write(reinterpret_cast<char*>(&donor), sizeof(donor));
+				flag = false;
+				cout << "\n\nExisting Conditions updated successfully.\n\n";
+				break;
+			}
+			else {
+				flag = true;
+			}
+		}
 	}
 	else {
-		cout << "\n\nOld Address: " << donor[currentUser].address << ", " << donor[currentUser].city;
-		do
-		{
-			cout << "\nPlease enter new address: ";
-			cin.getline(donor[currentUser].address, 30);
-		} while (!validate(donor[currentUser].address, "address"));
-
-		do
-		{
-			cout << "City: ";
-			cin.getline(donor[currentUser].city, 30);
-		} while (!validate(donor[currentUser].city, "city"));
+		cout << "Error! Could not open file\n\n";
 	}
 
-	g.write(reinterpret_cast<char*>(donor), sizeof(donorList));
+	if (flag) {
+		cout << "\nRecord not found...\n\n";
+	}
 
 	g.close();
-	cout << "\n\nHealth Status updated successfully.\n";
+
+	system("PAUSE");
+	donorScreen(currentUser);
+}
+
+void updateDonorEmail(uint32_t currentUser) {
+	cin.ignore();
+	line(100, '-');
+	donorList donor;
+	fstream g;
+	g.open("donors.dat", ios::in | ios::out | ios::binary);
+	if (g.is_open()) {
+		while (!g.eof()) {
+			g.read(reinterpret_cast<char*>(&donor), sizeof(donor));
+			int position = g.tellg();
+			if (currentUser == donor.id) {
+				cout << "\n\nOld Email: " << donor.email;
+				g.seekp(position - (static_cast<unsigned __int64>(sizeof(donor))));
+				do
+				{
+					cout << "\nNew Email: ";
+					cin.getline(donor.email, 30);
+				} while (!validate(donor.email, "email"));
+				g.write(reinterpret_cast<char*>(&donor), sizeof(donor));
+				flag = false;
+				cout << "\n\nExisting Conditions updated successfully.\n\n";
+				break;
+			}
+			else {
+				flag = true;
+			}
+		}
+	}
+	else {
+		cout << "Error! Could not open file\n\n";
+	}
+
+	if (flag) {
+		cout << "\nRecord not found...\n\n";
+	}
+
+	g.close();
+
 	system("PAUSE");
 	donorScreen(currentUser);
 }

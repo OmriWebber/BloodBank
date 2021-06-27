@@ -1,6 +1,8 @@
 #include "header.h"
 
-bool validate(char input[30], string type) {
+#pragma warning(suppress : 4996)
+
+bool validate(char input[], string type) {
 	if (type == "fname"){
 		if (strlen(input) <= 0 || strlen(input) > 30)
 		{
@@ -26,15 +28,16 @@ bool validate(char input[30], string type) {
 			return false;
 		}
 		else {
-			istringstream stm(input);
-			string day, month, year;
-			char delim = '/';
-			getline(stm, day, delim);
-			getline(stm, month, delim);
-			getline(stm, year, delim);
-			int d = stoi(day);
-			int m = stoi(month);
-			int y = stoi(year);
+			int d, m, y;
+			string s;
+			for (int i = 0; i < 30; i++) {
+				s = s + input[i];
+			}
+			
+			d = stoi(s.substr(0, 2));
+			m = stoi(s.substr(3, 2));
+			y = stoi(s.substr(6));
+
 
 			if (!(1582 <= y)) {
 				cout << "Date of Birth invalid, please try again...\n";

@@ -2,7 +2,7 @@
 
 struct donorList* searchByBloodType(char[30]);
 
-void recipientScreen(int currentUser) {
+void recipientScreen(uint32_t currentUser) {
 	recipientList* recipient = recipientData("recipients.dat");
 	char option;
 	cout << currentUser;

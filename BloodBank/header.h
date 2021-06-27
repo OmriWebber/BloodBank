@@ -15,10 +15,9 @@ using namespace std;
 
 const int donorLimit = 5;
 const int recipientLimit = 5;
-const int adminLimit = 5;
 
 struct donorList {
-	int id;
+	uint32_t id;
 	char username[30];
 	char password[30];
 	char fname[30];
@@ -38,7 +37,7 @@ struct donorList {
 };
 
 struct recipientList {
-	int id;
+	uint32_t id;
 	char username[30];
 	char password[30];
 	char name[30];
@@ -53,13 +52,14 @@ void line(int, char);
 struct donorList* donorData(string);
 struct recipientList* recipientData(string);
 struct adminList* adminData(string);
-void donorScreen(int);
-void updateDonorContact(int);
-void updateDonorAddress(int);
-void updateDonorHealth(int);
-void recipientScreen(int);
+void donorScreen(uint32_t);
+void updateDonorContact(uint32_t);
+void updateDonorAddress(uint32_t);
+void updateDonorHealth(uint32_t);
+void updateDonorEmail(uint32_t);
+void recipientScreen(uint32_t);
 void adminScreen();
 void Login(string);
 void Register(string);
 
-bool validate(char[30], string);
+bool validate(char[], string);

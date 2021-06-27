@@ -120,6 +120,7 @@ void Register(string cat) {
         
         g.write(reinterpret_cast<char*>(&donorIn), sizeof(donorList));
 
+        cout << "ID : " << donorIn.id;
         cout << "\n\nRegistration Successful.\n\n";
 
     } else if (cat == "recipient") {

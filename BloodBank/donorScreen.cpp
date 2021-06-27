@@ -1,14 +1,35 @@
 #include "header.h"
 
-void donorScreen(int currentUser) {
+void donorScreen(uint32_t currentUser) {
 	donorList* donor = donorData("donors.dat");
 	char option;
 
 reset1:;
-	//Display user info at top of input screen...... Maybe
-
-	cout << "\n\t\t\t\t\tDonor Screen - " << donor[currentUser].username;
+	cout << "\n\n\t\t\t\t\tYour Profile\n";
 	line(100, '-');
+
+	for (int i = 0; i < donorLimit; i++)
+	{
+		if (currentUser == donor[i].id)
+		{
+			cout << "\n\t\tID \t\t\t: \t\t" << donor[i].id << endl;
+			cout << "\t\tName \t\t\t: \t\t" << donor[i].fname << " " << donor[i].lname << endl;
+			cout << "\t\tDate of Birth \t\t: \t\t" << donor[i].dob << endl;
+			cout << "\t\tNationality \t\t: \t\t" << donor[i].nationality << endl;
+			cout << "\t\tEthnicity \t\t: \t\t" << donor[i].ethnicity << endl;
+			cout << "\t\tGender \t\t\t: \t\t" << donor[i].gender << endl;
+			cout << "\t\tExisting Conditions \t: \t\t" << donor[i].existingConditions << endl;
+			cout << "\t\tBlood Type \t\t: \t\t" << donor[i].bloodType << endl;
+			cout << "\t\tContact Number \t\t: \t\t" << donor[i].contactNumber << endl;
+			cout << "\t\tEmail \t\t\t: \t\t" << donor[i].email << endl;
+			cout << "\t\tAddress \t\t: \t\t" << donor[i].address << "\n\t\t\t\t\t\t\t" << donor[i].city << endl;
+			cout << "\t\tLast Donation \t\t: \t\t" << donor[i].lastDonation << endl;
+		}
+		
+	}
+	
+	line(100, '-');
+	cout << "\n\t\t\t\tDonor Menu - " << currentUser;
 	cout << "\n 1. Prodedure to donate blood";
 	cout << "\n 2. Benefits of blood information";
 	cout << "\n 3. Manage your information";
@@ -54,6 +75,7 @@ reset1:;
 		cout << "\n 1. Update contact details";
 		cout << "\n 2. Update address";
 		cout << "\n 3. Update health status";
+		cout << "\n 4. Update email address";
 		cout << "\n 4. <- Go Back";
 		cout << "\n";
 		line(100, '-');
@@ -71,6 +93,9 @@ reset1:;
 			break;
 		case '3':
 			updateDonorHealth(currentUser);
+			break;
+		case '4':
+			updateDonorEmail(currentUser);
 			break;
 		default:
 			cout << "Please enter a valid value";
