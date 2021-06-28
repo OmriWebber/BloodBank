@@ -6,7 +6,7 @@ void Login(string cat) {
     uint32_t currentUser;
     cin.ignore();
     cat[0] = toupper(cat[0]);
-    cout << "\n\t\t\t\t\n" << cat << " Login";
+    cout << "\n\t\t\t\t" << cat << " Login\n";
     line(100, '-');
     int maxAttempts = 0;
     

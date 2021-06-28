@@ -4,7 +4,6 @@ void donorScreen(uint32_t currentUser) {
 	donorList* donor = donorData("donors.dat");
 	char option;
 
-reset1:;
 	cout << "\n\n\t\t\t\t\tYour Profile\n";
 	line(100, '-');
 
@@ -38,7 +37,7 @@ reset1:;
 	cout << "\n";
 	line(100, '-');
 
-
+reset1:;
 	cout << "\nEnter your option: ";
 	cin >> option;
 
@@ -98,7 +97,7 @@ reset1:;
 			updateDonorEmail(currentUser);
 			break;
 		default:
-			cout << "Please enter a valid value";
+			cout << "\nPlease enter a valid value\n";
 			goto reset2;
 		}
 		break;

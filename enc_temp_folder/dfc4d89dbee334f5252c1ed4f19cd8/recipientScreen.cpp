@@ -167,7 +167,7 @@ void searchByName(char s[60]) {
 		strcat(newArray, " ");
 		strcat(newArray, donor[i].lname);
 
-		if (strcmp(s, newArray) == 0 || strcmp(s, donor[i].fname) == 0 || strcmp(s, donor[i].lname) == 0) {
+		if (strcmp(s, newArray) == 0) {
 			count++;
 		}
 	}
@@ -180,7 +180,7 @@ void searchByName(char s[60]) {
 			strcpy(newArray, donor[i].fname);
 			strcat(newArray, " ");
 			strcat(newArray, donor[i].lname);
-			if (strcmp(s, newArray) == 0 || strcmp(s, donor[i].fname) == 0 || strcmp(s, donor[i].lname) == 0) {
+			if (strcmp(s, newArray) == 0) {
 				cout << "\n\tID \t\t\t: \t" << donor[i].id << endl;
 				cout << "\tName \t\t\t: \t" << donor[i].fname << " " << donor[i].lname << endl;
 				cout << "\tDate of Birth \t\t: \t" << donor[i].dob << endl;

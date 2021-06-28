@@ -16,7 +16,7 @@ void Register(string cat) {
     if (cat == "donor")
     {
         donorList donorIn;
-        cout << "\n\t\t\t\tDonor Registration";
+        cout << "\n\t\t\t\t\tDonor Registration";
         line(100, '-');
         cout << "\n";
 
@@ -125,7 +125,7 @@ void Register(string cat) {
 
     } else if (cat == "recipient") {
         recipientList recipientIn;
-        cout << "\n\t\t\t\tRecipient Registration";
+        cout << "\n\t\t\t\t\tRecipient Registration";
         line(100, '-');
         recipientIn.id = reinterpret_cast<uint32_t>(&recipientIn);
         cout << "\n" << "Recipient Name: ";

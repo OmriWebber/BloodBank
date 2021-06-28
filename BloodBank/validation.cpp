@@ -109,12 +109,21 @@ bool validate(char input[], string type) {
 			return true;
 		}
 	} else if (type == "bloodType") {
+		
 		if (strlen(input) <= 0 || strlen(input) > 30)
 		{
 			return false;
-		}
-		else {
-			return true;
+		} else {
+			char bloodtype[8][4] = { "A+", "A-", "B+", "B-",  "O+", "O-",  "AB+", "AB-" };
+			for (int i = 0; i < 8; i++)
+			{
+				if (strcmp(input, bloodtype[i]) == 0)
+				{
+					return true;
+				}
+			}
+			cout << "Blood Type invalid, please try again...\n";
+			return false;
 		}
 	} else if (type == "gender") {
 		if (strlen(input) <= 0 || strlen(input) > 30)
@@ -180,6 +189,14 @@ bool validate(char input[], string type) {
 		else {
 			return true;
 		}
+	} else if (type == "name") {
+	if (strlen(input) <= 0 || strlen(input) > 60)
+	{
+		return false;
+	}
+	else {
+		return true;
+	}
 	}
 	return false;
 }

@@ -10,6 +10,7 @@
 #include <regex>
 #include <iomanip>
 #include <ctime>
+#include <cstring>
 
 using namespace std;
 
@@ -58,8 +59,12 @@ void updateDonorAddress(uint32_t);
 void updateDonorHealth(uint32_t);
 void updateDonorEmail(uint32_t);
 void recipientScreen(uint32_t);
+void searchByBloodType(char[30]);
+void searchByLocation(char[30]);
+void searchByName(char[60]);
 void adminScreen();
 void Login(string);
 void Register(string);
+
 
 bool validate(char[], string);
