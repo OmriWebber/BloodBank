@@ -45,6 +45,9 @@
     <ClCompile Include="updateDonor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="booking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

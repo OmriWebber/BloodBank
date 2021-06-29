@@ -2,6 +2,7 @@
 
 donorList donor[donorLimit];
 recipientList recipient[recipientLimit];
+bookingList booking[bookingLimit];
 
 
 struct donorList* donorData(string fileName) {
@@ -32,4 +33,19 @@ struct recipientList* recipientData(string fileName) {
     }
     r.close();
     return recipient;
+}
+
+struct bookingList* bookingData(string fileName) {
+    ifstream b;
+    b.open(fileName, ios::in | ios::binary);
+
+    if (b.is_open())
+    {
+        b.read(reinterpret_cast<char*>(booking), bookingLimit * sizeof(bookingList));
+    }
+    else {
+        cout << "\nFile unable to access ....";
+    }
+    b.close();
+    return booking;
 }

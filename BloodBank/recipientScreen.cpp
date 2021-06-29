@@ -23,7 +23,7 @@ void recipientScreen(uint32_t currentUser) {
 	}
 retry0:;
 	line(100, '-');
-	cout << "\n\t\t\t\tRecipient Menu - " << currentUser << "\n";
+	cout << "\n\t\t\t\tRecipient Menu - User ID: " << currentUser << endl;
 	cout << "\n 1. View donor information by blood type";
 	cout << "\n 2. View donor information by location";
 	cout << "\n 3. Search donor by name";

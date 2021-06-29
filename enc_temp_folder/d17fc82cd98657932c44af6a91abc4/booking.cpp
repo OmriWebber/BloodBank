@@ -129,11 +129,10 @@ void bookingWrite(uint32_t currentUser) {
             cout << "\nExisting Conditions : " << bookingIn.existingConditions;
             cout << "\nDate : " << bookingIn.date;
             cout << "\nTime : " << bookingIn.time;
-            cout << "\n";
 
             line(100, '-');
 
-            cout << "\nConfirm your booking? (y/n) : ";
+            cout << "\n\nConfirm your booking? (y/n) : ";
             cin >> contin;
         } while (contin == 'n' || contin == 'N');
         

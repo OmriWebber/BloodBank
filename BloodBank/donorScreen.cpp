@@ -28,7 +28,7 @@ void donorScreen(uint32_t currentUser) {
 	}
 	
 	line(100, '-');
-	cout << "\n\t\t\t\tDonor Menu - " << currentUser;
+	cout << "\n\t\t\t\tDonor Menu - User ID: " << currentUser << endl;
 	cout << "\n 1. Prodedure to donate blood";
 	cout << "\n 2. Benefits of blood information";
 	cout << "\n 3. Manage your information";
@@ -102,10 +102,7 @@ reset1:;
 		}
 		break;
 	case '4':
-		cout << "\nBook an appointment";
-		cout << "\n\n";
-		system("PAUSE");
-		goto reset1;
+		bookingWrite(currentUser);
 		break;
 	case '5':
 		cout << "\nLogging out . . .\n\n";

@@ -14,8 +14,9 @@
 
 using namespace std;
 
-const int donorLimit = 5;
-const int recipientLimit = 5;
+const int donorLimit = 30;
+const int recipientLimit = 30;
+const int bookingLimit = 30;
 
 struct donorList {
 	uint32_t id;
@@ -48,11 +49,21 @@ struct recipientList {
 	bool approved = false;
 };
 
+struct bookingList {
+	uint32_t id;
+	char fname[30];
+	char lname[30];
+	char dob[30];
+	char existingConditions[30];
+	char date[30];
+	char time[5];
+};
+
 int main();
 void line(int, char);
 struct donorList* donorData(string);
 struct recipientList* recipientData(string);
-struct adminList* adminData(string);
+struct bookingList* bookingData(string);
 void donorScreen(uint32_t);
 void updateDonorContact(uint32_t);
 void updateDonorAddress(uint32_t);
@@ -65,6 +76,8 @@ void searchByName(char[60]);
 void adminScreen();
 void Login(string);
 void Register(string);
+void bookingWrite(uint32_t);
 
 
 bool validate(char[], string);
+bool validateTime(char[], string[], int);

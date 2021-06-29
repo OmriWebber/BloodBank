@@ -190,13 +190,44 @@ bool validate(char input[], string type) {
 			return true;
 		}
 	} else if (type == "name") {
-	if (strlen(input) <= 0 || strlen(input) > 60)
-	{
+		if (strlen(input) <= 0 || strlen(input) > 60)
+		{
+			return false;
+		}
+		else {
+			return true;
+		}
+	} else if (type == "date") {
+		if (strlen(input) <= 0 || strlen(input) > 60)
+		{
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool validateTime(char time[], string availableTime[], int size) {
+	if (strcmp(time, "00:00") == 0){
+		cout << "\nInvlid time entered. Try again.";
 		return false;
 	}
 	else {
-		return true;
+		for (int i = 0; i < size; i++)
+		{
+			if (availableTime[i] != "")
+			{
+				if (strcmp(time, availableTime[i].c_str()) == 0)
+				{
+					return true;
+				}
+			}
+
+		}
 	}
-	}
+	
+	cout << "\nTime slot already taken!\nPick another timeslot";
 	return false;
 }
