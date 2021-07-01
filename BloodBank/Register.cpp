@@ -80,6 +80,7 @@ void Register(string cat) {
         do
         {
             cout << "Email Address: ";
+            cin.ignore();
             cin.getline(donorIn.email, 30);
         } while (!validate(donorIn.email, "email"));
         
@@ -87,6 +88,7 @@ void Register(string cat) {
         do
         {
             cout << "Physical Address: ";
+            
             cin.getline(donorIn.address, 30);
         } while (!validate(donorIn.address, "address"));
         

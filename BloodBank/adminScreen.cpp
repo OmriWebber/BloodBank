@@ -1,6 +1,12 @@
 #include "header.h"
 
 void adminScreen() {
+
+	donorList* donor = donorData("donors.dat");
+
+
+reset1:;
+	int option;
 	cout << "\n\t\t\t\t\tAdmin Screen - Admin 1";
 	line(100, '-');
 	cout << "\n 1. View All Donors";
@@ -13,4 +19,42 @@ void adminScreen() {
 	line(100, '-');
 
 	line(100, '-');
+	cout << "\n\nEnter your Option";
+	cin >> option;
+
+	switch (option) {
+	case 1:
+		
+		for (int i = 0; i < sizeof(donor); i++)
+		{
+			cout << donor[i].fname;
+		}
+		goto reset1;
+		break; 
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+	case 6:
+	default:
+		goto reset1;
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
