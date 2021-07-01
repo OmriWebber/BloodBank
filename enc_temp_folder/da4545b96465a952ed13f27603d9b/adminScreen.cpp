@@ -13,7 +13,7 @@ void adminScreen() {
 reset1:;
 	int option, i = 0, p = 0;
 	char check[30];
-	cout << "\n\t\t\t\t\tAdmin Screen - Admin\n";
+	cout << "\n\t\t\t\t\tAdmin Screen - Admin";
 	line(100, '-');
 	cout << "\n 1. View All Donors";
 	cout << "\n 2. View All Recipients";
@@ -82,7 +82,7 @@ reset1:;
 			break;
 
 	case 3:
-		int count = 0;
+
 		for (int i = 0; i < sizeof(recipient); i++)
 		{
 			if (booking[i].id == NULL) {
@@ -91,9 +91,8 @@ reset1:;
 
 			}
 			else {
-				count++;
-				cout << "\nResult #" << count << "\n";
-				cout << "\nBooking ID : " << booking[i].id";
+				line(100, '-');
+				cout << "\n\nConfirm Booking Details\n\n";
 				cout << "\nBooking Name : " << booking[i].fname << " " << booking[i].lname;
 				cout << "\nDate of Birth : " << booking[i].dob;
 				cout << "\nExisting Conditions : " << booking[i].existingConditions;
@@ -235,7 +234,9 @@ void approveRecipient() {
 		cout << "\nEnter recipient # to approve : ";
 		cin >> selectedRecipientNum;
 		selectedRecipientNum--;
+
 		selectedRecipientId = recipient[selectedRecipientNum].id;
+
 
 		cout << "Confirm approval of " << recipient[selectedRecipientNum].name << " (y/n) : ";
 		cin >> answer;
@@ -252,7 +253,6 @@ void approveRecipient() {
 	approveRecipientData(selectedRecipientId);
 
 	line(100, '-');
-	cout << "\n";
 	system("PAUSE");
 	adminScreen();
 }
@@ -280,4 +280,8 @@ void approveRecipientData(uint32_t selectedRecipient) {
 	}
 
 	g.close();
+}
+
+void updateDonorInfo() {
+
 }
