@@ -80,7 +80,7 @@ void Register(string cat) {
         do
         {
             cout << "Email Address: ";
-            cin.ignore();
+            
             cin.getline(donorIn.email, 30);
         } while (!validate(donorIn.email, "email"));
         
