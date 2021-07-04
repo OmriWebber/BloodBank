@@ -28,11 +28,11 @@ struct donorList {
 	char nationality[30];
 	char ethnicity[30];
 	char gender[30];
-	char existingConditions[30];
+	char existingConditions[100];
 	char bloodType[30];
 	char contactNumber[30];
-	char email[30];
-	char address[30];
+	char email[100];
+	char address[100];
 	char city[30];
 	char lastDonation[30];
 };
@@ -42,8 +42,8 @@ struct recipientList {
 	char username[30];
 	char password[30];
 	char name[30];
-	char address[30];
-	char email[30];
+	char address[100];
+	char email[100];
 	char contactNumber[30];
 	bool approved = false;
 };

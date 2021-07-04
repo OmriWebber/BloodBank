@@ -60,7 +60,7 @@ void Register(string cat) {
         do
         {
             cout << "Pre-Existing Conditions: ";
-            cin.getline(donorIn.existingConditions, 30);
+            cin.getline(donorIn.existingConditions, 100);
         } while (!validate(donorIn.existingConditions, "existingConditions"));
         
         do
@@ -80,14 +80,16 @@ void Register(string cat) {
         do
         {
             cout << "Email Address: ";
-            cin.getline(donorIn.email, 30);
+            
+            cin.getline(donorIn.email, 100);
         } while (!validate(donorIn.email, "email"));
         
 
         do
         {
             cout << "Physical Address: ";
-            cin.getline(donorIn.address, 30);
+            
+            cin.getline(donorIn.address, 100);
         } while (!validate(donorIn.address, "address"));
         
 
@@ -131,9 +133,9 @@ void Register(string cat) {
         cout << "\n" << "Recipient Name: ";
         cin.getline(recipientIn.name, 30);
         cout << "Physical Address: ";
-        cin.getline(recipientIn.address, 30);
+        cin.getline(recipientIn.address, 100);
         cout << "Email: ";
-        cin.getline(recipientIn.email, 30);
+        cin.getline(recipientIn.email, 100);
         cout << "Contact Number: ";
         cin.getline(recipientIn.contactNumber, 30);
         cout << "\n" << "Username: ";
