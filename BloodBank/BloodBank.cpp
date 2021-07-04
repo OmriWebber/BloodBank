@@ -1,7 +1,9 @@
 // BloodBank.cpp
 
+// Includes header file
 #include "header.h"
 
+// Main Function
 int main() {
 	char option;
 
@@ -12,6 +14,8 @@ int main() {
 	cout << "\nContact Details\nPhone: 0800 448 325\n";
 retry0:;
 	line(100, '-');
+
+	// Nested menu which goes to Login or Register
 	cout << "\n 1. Login";
 	cout << "\n 2. Register";
 	cout << "\n";
@@ -24,6 +28,7 @@ retry1:;
 	switch (option)
 	{
 	case '1':
+		// Login Menu
 		line(100, '-');
 		cout << "\n 1. Donor Login";
 		cout << "\n 2. Recipient Login";
@@ -38,12 +43,15 @@ retry1:;
 		switch (option)
 		{
 			case '1':
+				// Call Login function with donor string input
 				Login("donor");
 				break;
 			case '2':
+				// Call Login function with recipient string input
 				Login("recipient");
 				break;
 			case '3':
+				// Call Login function with admin string input
 				Login("admin");
 				break;
 			case '4':
@@ -56,6 +64,7 @@ retry1:;
 		}
 		break;
 	case '2':
+		// Register Menu
 		line(100, '-');
 		cout << "\n 1. Register as a Donor";
 		cout << "\n 2. Register as a Recipient";
@@ -69,9 +78,11 @@ retry1:;
 		switch (option)
 		{
 			case '1':
+				// Call Register function with donor string input
 				Register("donor");
 				break;
 			case '2':
+				// Call Register function with recipient string input
 				Register("recipient");
 				break;
 			case '3':

@@ -24,7 +24,6 @@ void donorScreen(uint32_t currentUser) {
 			cout << "\t\tAddress \t\t: \t\t" << donor[i].address << "\n\t\t\t\t\t\t\t" << donor[i].city << endl;
 			cout << "\t\tLast Donation \t\t: \t\t" << donor[i].lastDonation << endl;
 		}
-		
 	}
 	
 	line(100, '-');

@@ -101,7 +101,7 @@ bool validate(char input[], string type) {
 			return true;
 		}
 	} else if (type == "existingConditions") {
-		if (strlen(input) <= 0 || strlen(input) > 30)
+		if (strlen(input) <= 0 || strlen(input) > 100)
 		{
 			return false;
 		}

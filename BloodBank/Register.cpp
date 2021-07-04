@@ -60,7 +60,7 @@ void Register(string cat) {
         do
         {
             cout << "Pre-Existing Conditions: ";
-            cin.getline(donorIn.existingConditions, 30);
+            cin.getline(donorIn.existingConditions, 100);
         } while (!validate(donorIn.existingConditions, "existingConditions"));
         
         do

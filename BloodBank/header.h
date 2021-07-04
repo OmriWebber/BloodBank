@@ -28,7 +28,7 @@ struct donorList {
 	char nationality[30];
 	char ethnicity[30];
 	char gender[30];
-	char existingConditions[30];
+	char existingConditions[100];
 	char bloodType[30];
 	char contactNumber[30];
 	char email[30];

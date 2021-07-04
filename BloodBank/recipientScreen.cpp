@@ -5,85 +5,108 @@
 void recipientScreen(uint32_t currentUser) {
 	// get recipient data from file
 	recipientList* recipient = recipientData("recipients.dat");
-	char option;
 
-	cout << "\n\n\t\t\t\t\tYour Profile\n";
-	line(100, '-');
-
-	// print current recipient details
+	bool isApproved = false;
 	for (int i = 0; i < recipientLimit; i++)
 	{
 		// get user profile based on ID
 		if (currentUser == recipient[i].id)
 		{
-			cout << "\n\t\tID \t\t\t: \t\t" << recipient[i].id << endl;
-			cout << "\t\tName \t\t\t: \t\t" << recipient[i].name << endl;
-			cout << "\t\tAddress \t\t: \t\t" << recipient[i].address << endl;
-			cout << "\t\tEmail \t\t\t: \t\t" << recipient[i].email << endl;
-			cout << "\t\tContact Number \t\t: \t\t" << recipient[i].contactNumber << endl;
+			isApproved = true;
 		}
 
 	}
 
-retry0:;
-	line(100, '-');
-	// recipient menu
-	cout << "\n\t\t\t\tRecipient Menu - User ID: " << currentUser << endl;
-	cout << "\n 1. View donor information by blood type";
-	cout << "\n 2. View donor information by location";
-	cout << "\n 3. Search donor by name";
-	cout << "\n 4. Logout";
-	cout << "\n";
-	line(100, '-');
+	if (isApproved) {
 
-retry1:;
-	cout << "\nEnter your option: ";
-	cin >> option;
+		char option;
 
-	switch (option)
-	{
-	case '1': // search by blood type, get input then run through function
-		char bloodtype_s[30];
-		cin.ignore();
-		do
+		cout << "\n\n\t\t\t\t\tYour Profile\n";
+		line(100, '-');
+
+		// print current recipient details
+		for (int i = 0; i < recipientLimit; i++)
 		{
-			cout << "Enter Blood Type: ";
-			cin.getline(bloodtype_s, 30);
-		} while (!validate(bloodtype_s, "bloodType"));
-		searchByBloodType(bloodtype_s);
-		goto retry0;
-		break;
-	case '2': // search by location, get input then run through function
-		char city_s[30];
-		cin.ignore();
-		do
+			// get user profile based on ID
+			if (currentUser == recipient[i].id)
+			{
+				cout << "\n\t\tID \t\t\t: \t\t" << recipient[i].id << endl;
+				cout << "\t\tName \t\t\t: \t\t" << recipient[i].name << endl;
+				cout << "\t\tAddress \t\t: \t\t" << recipient[i].address << endl;
+				cout << "\t\tEmail \t\t\t: \t\t" << recipient[i].email << endl;
+				cout << "\t\tContact Number \t\t: \t\t" << recipient[i].contactNumber << endl;
+			}
+
+		}
+
+	retry0:;
+		line(100, '-');
+		// recipient menu
+		cout << "\n\t\t\t\tRecipient Menu - User ID: " << currentUser << endl;
+		cout << "\n 1. View donor information by blood type";
+		cout << "\n 2. View donor information by location";
+		cout << "\n 3. Search donor by name";
+		cout << "\n 4. Logout";
+		cout << "\n";
+		line(100, '-');
+
+	retry1:;
+		cout << "\nEnter your option: ";
+		cin >> option;
+
+		switch (option)
 		{
-			cout << "Enter Location: ";
-			cin.getline(city_s, 30);
-		} while (!validate(city_s, "city"));
-		searchByLocation(city_s);
-		goto retry0;
-		break;
-	case '3': // search by name, get input then run through function
-		char name_s[60];
-		cin.ignore();
-		do
-		{
-			cout << "Enter Name: ";
-			cin.getline(name_s, 60);
-		} while (!validate(name_s, "name"));
-		searchByName(name_s);
-		goto retry0;
-		break;
-	case '4': // log out, goes back to main menu
-		cout << "\nLogging out . . .\n";
+		case '1': // search by blood type, get input then run through function
+			char bloodtype_s[30];
+			cin.ignore();
+			do
+			{
+				cout << "Enter Blood Type: ";
+				cin.getline(bloodtype_s, 30);
+			} while (!validate(bloodtype_s, "bloodType"));
+			searchByBloodType(bloodtype_s);
+			goto retry0;
+			break;
+		case '2': // search by location, get input then run through function
+			char city_s[30];
+			cin.ignore();
+			do
+			{
+				cout << "Enter Location: ";
+				cin.getline(city_s, 30);
+			} while (!validate(city_s, "city"));
+			searchByLocation(city_s);
+			goto retry0;
+			break;
+		case '3': // search by name, get input then run through function
+			char name_s[60];
+			cin.ignore();
+			do
+			{
+				cout << "Enter Name: ";
+				cin.getline(name_s, 60);
+			} while (!validate(name_s, "name"));
+			searchByName(name_s);
+			goto retry0;
+			break;
+		case '4': // log out, goes back to main menu
+			cout << "\nLogging out . . .\n";
+			system("PAUSE");
+			main();
+			break;
+		default: // input checking
+			cout << "Please enter a valid value";
+			goto retry1;
+			break;
+		}
+	}
+	else {
+		line(100, '-');
+		cout << "\n\nYour account is still pending approval, contact an administrator.\n\n";
+		line(100, '-');
+		cout << "\nGoing back to main menu\n\n";
 		system("PAUSE");
 		main();
-		break;
-	default: // input checking
-		cout << "Please enter a valid value";
-		goto retry1;
-		break;
 	}
 }
 
