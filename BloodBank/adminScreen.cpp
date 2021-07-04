@@ -11,7 +11,7 @@ void adminScreen() {
 
 
 reset1:;
-	int option, i = 0, p = 0;
+	int option, i = 0, p = 0, count = 0;
 	char check[30];
 	cout << "\n\t\t\t\t\tAdmin Screen - Admin\n";
 	line(100, '-');
@@ -82,7 +82,7 @@ reset1:;
 			break;
 
 	case 3:
-		int count = 0;
+		
 		for (int i = 0; i < sizeof(recipient); i++)
 		{
 			if (booking[i].id == NULL) {
@@ -93,7 +93,7 @@ reset1:;
 			else {
 				count++;
 				cout << "\nResult #" << count << "\n";
-				cout << "\nBooking ID : " << booking[i].id";
+				cout << "\nBooking ID : " << booking[i].id;
 				cout << "\nBooking Name : " << booking[i].fname << " " << booking[i].lname;
 				cout << "\nDate of Birth : " << booking[i].dob;
 				cout << "\nExisting Conditions : " << booking[i].existingConditions;
