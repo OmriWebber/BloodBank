@@ -35,7 +35,6 @@ struct donorList {
 	char address[30];
 	char city[30];
 	char lastDonation[30];
-	bool approved = false;
 };
 
 struct recipientList {
