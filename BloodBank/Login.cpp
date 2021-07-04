@@ -40,7 +40,6 @@ void Login(string cat) {
             }
         } 
         else if (cat == "Admin") {
-            cout << inName << " " << inPassword;
                 if (strcmp(inName, "admin") == 0 && strcmp(inPassword, "admin") == 0)
                 {
                     cout << "\n\nLogin Successful\n" << "Welcome, Admin.";

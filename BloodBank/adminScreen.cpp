@@ -56,7 +56,7 @@ reset1:;
 			cin.getline(bloodtype_s, 30);
 		} while (!validate(bloodtype_s, "bloodType"));
 		searchByBloodType(bloodtype_s);
-		goto reset1;
+		adminScreen();
 		break;
 	case 5:
 		// Search Donors by Location
@@ -68,7 +68,7 @@ reset1:;
 			cin.getline(city_s, 30);
 		} while (!validate(city_s, "city"));
 		searchByLocation(city_s);
-		goto reset1;
+		adminScreen();
 		break;
 	case 6:
 		// Call updateDonorInfo function which update donors existing conditions
@@ -185,7 +185,7 @@ void viewAllBooking() {
 		}
 	}
 
-	cout << "\n\t\t\t\t\tDisplaying All Bookings - Results found : " << count << "\n";
+	cout << "\n\t\t\t\tDisplaying All Bookings - Results found : " << count << "\n";
 	for (int i = 0; i < bookingLimit; i++)
 	{
 		if (booking[i].id != 0)
@@ -348,6 +348,10 @@ void updateDonorInfo() {
 		}
 		else if (confirmAnswer == 'n' || confirmAnswer == 'N')
 		{
+			flag = false;
+		}
+		else {
+			cout << "\nInvalid Input, returning to donor list . .\n";
 			flag = false;
 		}
 	} while (!flag);
