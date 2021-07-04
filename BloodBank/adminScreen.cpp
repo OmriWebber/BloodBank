@@ -148,7 +148,6 @@ void viewAllRecipient() {
 	}
 
 	cout << "\n\t\t\t\tDisplaying All Recipients - Results found : " << count << "\n\n";
-	cout << "ID\t\tName\t\tAddress\t\t\tEmail\t\t\tContact Number\tStatus";
 
 	for (int i = 0; i < recipientLimit; i++)
 	{
@@ -161,12 +160,13 @@ void viewAllRecipient() {
 			else {
 				status = "Pending";
 			}
-			cout << "\n" << recipient[i].id;
-			cout << "\t" << recipient[i].name;
-			cout << "\t\t" << recipient[i].address;
-			cout << "\t\t" << recipient[i].email;
-			cout << "\t" << recipient[i].contactNumber;
-			cout << "\t" << status << endl;
+			cout << "\n\tResult #" << i + 1 << "\n";
+			cout << "\n\t\tID \t\t: \t\t" << recipient[i].id << endl;
+			cout << "\t\tName \t\t: \t\t" << recipient[i].name << endl;
+			cout << "\t\tAddress \t: \t\t" << recipient[i].address << endl;
+			cout << "\t\tEmail \t\t: \t\t" << recipient[i].email << endl;
+			cout << "\t\tContact Number \t: \t\t" << recipient[i].contactNumber << endl;
+			cout << "\t\tStatus \t\t: \t\t" << status << endl;
 		}
 	}
 	line(100, '-');
