@@ -175,16 +175,11 @@ void viewAllRecipient() {
 	adminScreen();
 }
 
-void viewAllBooking() {
-	bookingList* booking = bookingData("bookings.dat");
-	line(100, '-');
-
-	int count = 0;
-	for (int i = 0; i < donorLimit; i++)
-	{
-		if (booking[i].id != 0) {
-			count++;
-		}
+	case 3:
+		int count = 0;
+		for (int i = 0; i < sizeof(recipient); i++)
+		{
+			if (booking[i].id == NULL) {
 
 	}
 	cout << "\n\t\t\t\t\tDisplaying All Bookings - Results found : " << count << "\n";
