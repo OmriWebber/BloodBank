@@ -5,6 +5,7 @@
 
 void getAvailableTimes(char* , int);
 
+// Declare available times
 string availableTime[8] = { "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00" };
 
 void bookingWrite(uint32_t currentUser) {

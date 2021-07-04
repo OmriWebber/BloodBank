@@ -10,7 +10,7 @@ int main() {
 	cout << "\n\t\t\t\tOneBlood - Donor Bank Service";
 	line(100, '-');
 
-	cout << "\nBlood is made up of four main components: red blood cells, white blood cells, platelets and, the protein-rich liquid that suspends them all, plasma.\n\nIt's rare for a patient to require all of the blood components at one time, so a blood donation is usually separated into three parts for transfusion – red blood cells, platelets and plasma. This means patients can be transfused with only what they need, and your single blood donation can help save more than one patient.\n\nBecause there's no substitute for these lifesaving components, patients around the country rely on blood donors to help save their lives.\n";
+	cout << "\nBlood is made up of four main components: red blood cells, white blood cells, platelets and, the protein-rich liquid that suspends them all, plasma.\n\nIt's rare for a patient to require all of the blood components at one time, so a blood donation is usually separated into three parts for transfusion red blood cells, platelets and plasma. This means patients can be transfused with only what they need, and your single blood donation can help save more than one patient.\n\nBecause there's no substitute for these lifesaving components, patients around the country rely on blood donors to help save their lives.\n";
 	cout << "\nContact Details\nPhone: 0800 448 325\n";
 retry0:;
 	line(100, '-');

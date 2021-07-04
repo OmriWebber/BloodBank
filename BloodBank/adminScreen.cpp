@@ -262,8 +262,12 @@ void approveRecipient() {
 			flag = false;
 		}
 	} while (!flag);
-			approveRecipientData(selectedRecipientId);
-		}
+	approveRecipientData(selectedRecipientId);
+	line(100, '-');
+	cout << "\n";
+	system("PAUSE");
+	adminScreen();
+}
 
 // Update new approved recipient
 void approveRecipientData(uint32_t selectedRecipient) {
